@@ -37,11 +37,15 @@ class App extends Component {
 
 
     fetch('https://data.nashville.gov/resource/28i3-48zr.json?block=0',{
-      method: "GETn",
+      method: "GET",
       data: {
         "$limit" : 5000,
         "$$app_token" : "r1zPUd6qffmC6asW1Y8pPPhuj"
-      }
+        
+      },
+      header: {
+        "Access-Control-Allow-Origin" : "*"
+   }
     }).then((data)=>{
       data.json().then((resolved)=>{
         console.log("Test returned ", resolved);
