@@ -15,7 +15,9 @@ class App extends Component {
 
 
   getByTime(){
-
+    let stringtoModify;
+    
+    return stringtoModify; 
 
 
   }
@@ -23,12 +25,16 @@ class App extends Component {
 
   runApi(){
     //Series of methods for string builders activated here.
-
-
+    let string;
 
     
+    if(true === ()){
+       string = this.getByTime();
+    }
 
-    fetch('https://data.nashville.gov/resource/28i3-48zr.json?street_name=1008A 11TH AV N',{
+
+
+    fetch('https://data.nashville.gov/resource/28i3-48zr.json?block=0',{
       method: "GET",
       data: {
         "$limit" : 5000,
