@@ -34,7 +34,7 @@ class App extends Component {
 
     }
 
-
+    // Change the fetch with modified string.
 
     fetch('https://data.nashville.gov/resource/28i3-48zr.json?block=0',{
       method: "GET",
