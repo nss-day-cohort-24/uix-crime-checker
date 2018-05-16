@@ -3,25 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  getByGeocoords(){
-
-  }
-  
-
-  getByCrime(){
-
-
-  }
-
-
-  getByTime(string){
-   
-
+  getByGeocoords(geoCoords, string){
 
 
     return string;
+  }
+  
+
+  getByCrime(crime, string){
+
+    return string;
+  }
 
 
+  getByTime(time, string){
+
+    return string;
   }
 
 
@@ -40,7 +37,7 @@ class App extends Component {
 
 
     fetch('https://data.nashville.gov/resource/28i3-48zr.json?block=0',{
-      method: "GET",
+      method: "GETn",
       data: {
         "$limit" : 5000,
         "$$app_token" : "r1zPUd6qffmC6asW1Y8pPPhuj"
