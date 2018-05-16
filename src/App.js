@@ -14,10 +14,12 @@ class App extends Component {
   }
 
 
-  getByTime(){
-    let stringtoModify;
-    
-    return stringtoModify; 
+  getByTime(string){
+   
+
+
+
+    return string;
 
 
   }
@@ -25,11 +27,14 @@ class App extends Component {
 
   runApi(){
     //Series of methods for string builders activated here.
-    let string;
+    let string, time, crime, geoCoords;
 
-    
-    if(true === ()){
-       string = this.getByTime();
+
+    if(true === (false)){ //conditional for switching....
+       string +=` ${this.getByTime(time, string)}`;
+       string +=` ${this.getByCrime(crime, string)}`;
+       string +=` ${this.getByGeocoords(geoCoords, string)}`;
+
     }
 
 
@@ -57,8 +62,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro" testAPI={this.runApi()}>
-          To get started, edit <code>src/App.js</code> and save to reload. 
+        <p className="App-intro" runapi={this.runApi()}>
+         Check console because that's the only place you'll see changes atm. 
         </p>
       </div>
     );
