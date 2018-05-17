@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Filter from './components/Filter';
 
 class App extends Component {
   getByGeocoords(geoCoords, string){
@@ -66,6 +67,7 @@ class App extends Component {
         <p className="App-intro" runapi={this.runApi()}>
          Check console because that's the only place you'll see changes atm. 
         </p>
+        <Filter />
       </div>
     );
   }
