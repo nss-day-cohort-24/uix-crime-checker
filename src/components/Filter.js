@@ -29,7 +29,9 @@ class Filter extends Component {
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <CollapseExample />
+                <CollapseExample title="Type of Complaint"/>
+                <CollapseExample title="Date of Crime"/>
+                <CollapseExample title="Location"/>
             </SlidingPane>
         </div>
     );
