@@ -14,6 +14,7 @@ export class MapContainer extends Component {
     onMarkerClick(props, marker, e) {
         this.setState({
             selectedPlace: props,
+            center:{lat:36.174465, lng:-86.767960}
             activeMarker: marker,
             showingInfoWindow: true
         });
@@ -22,13 +23,17 @@ export class MapContainer extends Component {
         if (!this.props.google) {
             return <div>Loading...</div>
         }
-
+        const style = {
+          width: '100%',
+          height: '100%',
+          border:'2px solid green'
+        }
         return (
             <div>
-                <Map style={{minWwidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={14} className={"map"}>
+                <Map style={style} google={this.props.google}zoom={5} className={"map"}>
                 <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
 
-                    <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 37.778519, lng: -89.405640 }} />
+                    <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 36.1667, lng: -86.4660 }} />
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
