@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import icon  from '../img/del.png';
-
-const google={},
-apiKey="AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo",
-v="3";
-
- class MapContainer extends Component {
+// import icon  from '../img/del.png';
+export class MapContainer extends Component {
     constructor(props) {
         super(props);
         this.onMarkerClick = this.onMarkerClick.bind(this);
@@ -30,8 +25,9 @@ v="3";
 
         return (
             <div>
-                <Map style={{minWwidth: "200px",minHeight: "200px"}}
-                 google={this.props.google}zoom={14}>
+                <Map style={{minWwidth: "200px",minHeight: "200px"}} google={this.props.google}zoom={14}>
+                <Marker onClick={this.onMarkerClick}
+                            name={'Current location'} />
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
@@ -41,5 +37,7 @@ v="3";
             </div>
         );
     }
-}
-export default MapContainer;
+} export default GoogleApiWrapper({
+    apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo",
+    v: "3"
+})(MapContainer);
