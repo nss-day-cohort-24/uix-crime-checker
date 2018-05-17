@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Filter from './components/Filter';
+import MapContainer from './components/MapContainer';
+import { Marker } from 'google-maps-react';
+import CollapseExample from './components/Collapse';
+import { Button } from 'reactstrap';
 
 class App extends Component {
   getByGeocoords(geoCoords, string){
@@ -61,13 +64,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Button>Button</Button>
+        <CollapseExample />
+        <Filter />
+
+<MapContainer/>
+
         <p className="App-intro" runapi={this.runApi()}>
          Check console because that's the only place you'll see changes atm. 
         </p>
-        <Filter />
       </div>
     );
   }

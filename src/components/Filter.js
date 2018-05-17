@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Filter.css';
+import CollapseExample from './Collapse';
  
 class Filter extends Component {
     constructor(props) {
@@ -24,10 +25,11 @@ class Filter extends Component {
                 </button>
             <SlidingPane
                 isOpen={ this.state.isPaneOpenLeft }
+                title='Filter'
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <div>And I am pane content on left.</div>
+                <CollapseExample />
             </SlidingPane>
         </div>
     );
