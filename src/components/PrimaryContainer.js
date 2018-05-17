@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './PrimaryContainer.css';
+import MapContainer from './MapContainer';
 
 class PrimaryContainer extends Component {
 
@@ -8,6 +9,9 @@ class PrimaryContainer extends Component {
         return(
             <div className="primary">
                 <p>This is the main container. Where the map, list, and chart components will render.</p>
+                <div className = "map">
+                    <MapContainer />
+                </div>
             </div>
         );
     }

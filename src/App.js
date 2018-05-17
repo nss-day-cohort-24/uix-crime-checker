@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
@@ -63,10 +62,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <PrimaryContainer />
         <p className="App-intro" runapi={this.runApi()}>
          Check console because that's the only place you'll see changes atm. 
         </p>
+        <PrimaryContainer />
         <FooterNav />
       </div>
     );
