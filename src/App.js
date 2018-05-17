@@ -3,7 +3,27 @@ import './App.css';
 import MapContainer from './components/MapContainer';
 import { Marker } from 'google-maps-react';
 
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        arr: {},
+        isLoaded: false
+    };
+
+    this.runApi.bind(this);
+}
+
+  componentDidMount(){
+
+    this.runApi()
+  }
+
+  componentDidUpdate(){
+
+    console.log("Bam it updated: ", this.state);
+  }
   getByGeocoords(geoCoords, string){
 
 
@@ -21,7 +41,7 @@ class App extends Component {
 
     return string;
   }
-
+ 
 
   runApi(){
     //Series of methods for string builders activated here.
@@ -50,6 +70,13 @@ class App extends Component {
     }).then((data)=>{
       data.json().then((resolved)=>{
         console.log("Test returned ", resolved);
+        let arr = resolved;
+        console.log("What's this? ", resolved);
+        this.setState({
+          arr: resolved,
+          isLoaded: true
+        });
+        
       });
     
     });
@@ -58,19 +85,30 @@ class App extends Component {
   
   
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-        </header>
+    
+    if(this.state.isLoaded){
+      return (
+        <div className="App">
+          <header className="App-header">
+          </header>
+  
+          <MapContainer arr={this.arr}/>
+  
+          <p className="App-intro" >
+           Check console because that's the only place you'll see changes atm. 
+          </p>
+  
+        </div>
+      );
 
-<MapContainer/>
 
-        <p className="App-intro" runapi={this.runApi()}>
-         Check console because that's the only place you'll see changes atm. 
-        </p>
+    }
+    else{
 
-      </div>
-    );
+      return(
+        <h1> Didn't Go. </h1>
+      )
+    }
   }
 }
 
