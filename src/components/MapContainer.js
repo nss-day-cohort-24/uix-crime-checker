@@ -5,24 +5,36 @@ import '../App.css';
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
-
+        this.onMarkerChange = this.onMarkerChange.bind(this);
+         this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
-            youName:null,
-            zipCode:null
+            call:null,
             lat:null,
             lng:null,
+            complain:null,
+            zoom:14,
+            imagePreviewUrl:''
         };
-         this.onMarkerChange = this.onMarkerChange.bind(this);
-          this.onMarkerClick = this.onMarkerClick.bind(this);
+
+    }
+    onMarkerChange(props,marker){
+      this.setState({
+         lat:78.99525,
+         lng:45.689
+      });
     }
     onMarkerClick(props, marker, e) {
         this.setState({
+          lat:89.99525,
+          lng:36.689,
             selectedPlace: props,
             activeMarker: marker,
+            complain:"Robb",
             showingInfoWindow: true
+            // imagePreviewUrl:
         });
     }
     render() {
@@ -41,8 +53,8 @@ export class MapContainer extends Component {
 
 
 
-
-                    <Marker  onClick={this.onMarkerClick} name={'I think Dan is in nashville'} position={{ lat:36.1667, lng:-86.4660 }}/>
+<Marker  onClick={this.onMarkerClick} name={'I think Dan is in nashville'} position={this.onMarkerChange}/>
+                    <Marker  onClick={this.onMarkerClick} name={'I think Dan is in nashville'} />
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>

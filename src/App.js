@@ -3,14 +3,14 @@ import './App.css';
 import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
 import FooterNav from './components/FooterNav';
-
+import Filter from './components/Filter';
 class App extends Component {
   getByGeocoords(geoCoords, string){
 
 
     return string;
   }
-  
+
 
   getByCrime(crime, string){
 
@@ -43,7 +43,7 @@ class App extends Component {
       data: {
         "$limit" : 5000,
         "$$app_token" : "r1zPUd6qffmC6asW1Y8pPPhuj"
-        
+
       },
       header: {
         "Access-Control-Allow-Origin" : "*"
@@ -52,18 +52,18 @@ class App extends Component {
       data.json().then((resolved)=>{
         console.log("Test returned ", resolved);
       });
-    
+
     });
 
   }
-  
-  
+
+
   render() {
     return (
       <div className="App">
         <Header />
         <p className="App-intro" runapi={this.runApi()}>
-         Check console because that's the only place you'll see changes atm. 
+         Check console because that's the only place you'll see changes atm.
         </p>
         <PrimaryContainer />
         <FooterNav />
