@@ -90,15 +90,16 @@ class App extends Component {
     if(this.state.isLoaded){
       return (
         <div className="App">
-          <header className="App-header">
-          </header>
+          
   
+          <Header />
           <PrimaryContainer arr={this.arr}/>
   
           <p className="App-intro" >
            Check console because that's the only place you'll see changes atm. 
           </p>
-  
+          
+        <FooterNav />
         </div>
       );
 
