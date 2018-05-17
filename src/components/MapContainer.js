@@ -30,7 +30,11 @@ export class MapContainer extends Component {
         }
         return (
             <div>
+<<<<<<< HEAD
                 <Map style={style} google={this.props.google}zoom={5} className={"map"}>
+=======
+                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={14} className={"map"}>
+>>>>>>> master
                 <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
 
                     <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 36.1667, lng: -86.4660 }} />

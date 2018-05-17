@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import MapContainer from './components/MapContainer';
-import { Marker } from 'google-maps-react';
+import PrimaryContainer from './components/PrimaryContainer';
+import Header from './components/Header';
+import FooterNav from './components/FooterNav';
 
 class App extends Component {
   getByGeocoords(geoCoords, string){
@@ -60,15 +61,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
-
-<MapContainer/>
-
+        <Header />
         <p className="App-intro" runapi={this.runApi()}>
          Check console because that's the only place you'll see changes atm. 
         </p>
-
+        <PrimaryContainer />
+        <FooterNav />
       </div>
     );
   }
