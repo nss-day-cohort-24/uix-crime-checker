@@ -25,9 +25,10 @@ export class MapContainer extends Component {
 
         return (
             <div>
-                <Map style={{minWwidth: "200px",minHeight: "200px"}} google={this.props.google}zoom={14}>
-                <Marker onClick={this.onMarkerClick}
-                            name={'Current location'} />
+                <Map style={{minWwidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={14} className={"map"}>
+                <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
+
+                    <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 37.778519, lng: -89.405640 }} />
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
