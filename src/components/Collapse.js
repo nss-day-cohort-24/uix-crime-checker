@@ -15,16 +15,14 @@ class CollapseExample extends Component {
     render() {
         return (
             <div>
-                <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+                <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{this.props.title}</Button>
                 <Collapse isOpen={this.state.collapse}>
-                    <Card>
-                        <CardBody>
-                            Anim pariatur cliche reprehenderit,
-                             enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                             anim keffiyeh helvetica, craft beer labore wes anderson cred
-                             nesciunt sapiente ea proident.
-            </CardBody>
-                    </Card>
+                    <div>
+                        Anim pariatur cliche reprehenderit,
+                        enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                        anim keffiyeh helvetica, craft beer labore wes anderson cred
+                        nesciunt sapiente ea proident.
+                    </div>
                 </Collapse>
             </div>
         );

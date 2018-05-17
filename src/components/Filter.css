@@ -1,0 +1,8 @@
+.slide-pane__header {
+    background: #ffffff;
+    border-bottom: none;
+}
+
+.slide-pane__close {
+    display: none;
+}
