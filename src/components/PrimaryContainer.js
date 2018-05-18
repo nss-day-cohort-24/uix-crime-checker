@@ -12,7 +12,7 @@ class PrimaryContainer extends Component {
                 <p>This is the main container. Where the map, list, and chart components will render.</p>
                 <Filter />
                 <div className = "map">
-                    <MapContainer />
+                    <MapContainer arr={this.props.arr}/>
                 </div>
             </div>
         );
