@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import './Header.css';
+import Logo from '../img/CrimeCheck_ CClogoWhite.png'
 
 class Header extends Component {
 
     render(){
         return(
-            <div className="topNav">
-             <p>This is the container for the top nav. It will include logo and the hamburger resources menu. </p>
+            <div className="topNav row">
+                <div className="col-3 mr-auto">
+                    <img src={Logo} className="header-logo" />
+                </div>
+                <div className="col-auto ml-auto">
+                    <p>MENU</p>
+                </div>
             </div>
         );
     }

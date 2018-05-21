@@ -8,17 +8,16 @@
     border: 1px solid lightslategrey;
     z-index: 5;
     position: relative;
-    top: .5rem;
-    width: 75%;
+    top: 5rem;
+    width: 65%;
     margin: auto;
 }
 
 .map{
     max-height: 80%;
-    top: 60px;
+    top: 65px;
     /* media query this for desktop display -- 40px */
     width: 100%;
-
 }
 
 .footerNav{

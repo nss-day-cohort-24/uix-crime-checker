@@ -61,9 +61,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <p className="App-intro" runapi={this.runApi()}>
+        {/* <p className="App-intro" runapi={this.runApi()}>
          Check console because that's the only place you'll see changes atm. 
-        </p>
+        </p> */}
         <PrimaryContainer />
       </div>
     );
