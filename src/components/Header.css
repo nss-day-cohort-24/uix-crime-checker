@@ -13,7 +13,13 @@
 }
 
 .header-logo{
-    max-width: 100%;
+    max-width: 25%;
     height: auto;
-    /* margin: 5px 0; */
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.navbar-toggler{
+    border: 1px solid #fff !important;
+    color: white;
 }

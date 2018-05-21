@@ -12,11 +12,13 @@ class PrimaryContainer extends Component {
                 <div className="filter">
                     <Filter />
                 </div>
-                <div className = "map">
+                <div className = "map"> 
+                {/* if list state = false, display MapContainer */}
                     <MapContainer />
                 </div>
+                {/* else, display List */}
                 <div className="footerNav">
-                    <p>This is the container that will have the router for the main footer nav. </p>
+                    <p>This is the container that will set state for whether to view map or list. </p>
                 </div>
             </div>
         );
