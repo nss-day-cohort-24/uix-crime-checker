@@ -4,6 +4,25 @@ import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        arr: {},
+        isLoaded: false
+    };
+
+    this.runApi.bind(this);
+}
+
+  componentDidMount(){
+
+    this.runApi()
+  }
+
+  componentDidUpdate(){
+
+    console.log("Bam it updated: ", this.state);
+  }
   getByGeocoords(geoCoords, string){
 
 
@@ -21,7 +40,7 @@ class App extends Component {
 
     return string;
   }
-
+ 
 
   runApi(){
     //Series of methods for string builders activated here.
@@ -50,16 +69,22 @@ class App extends Component {
     }).then((data)=>{
       data.json().then((resolved)=>{
         console.log("Test returned ", resolved);
+        let arr = resolved;
+        console.log("What's this? ", resolved);
+        this.setState({
+          arr: resolved,
+          isLoaded: true
+        });
+        
       });
     
     });
 
   }
   
-  
   render() {
     
-    // if(this.state.isLoaded){
+    if(this.state.isLoaded){
       return (
         <div className="App">
           <Header />
@@ -67,13 +92,13 @@ class App extends Component {
         </div>
       );
     }
-  //   else{
+    else{
 
-  //     return(
-  //       <h1> Didn't Go. </h1>
-  //     )
-  //   }
-  // }
+      return(
+        <h1> Didn't Go. </h1>
+      )
+    }
+  }
 }
 
 export default App;
