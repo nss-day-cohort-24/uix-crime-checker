@@ -93,7 +93,7 @@ class App extends Component {
           
   
           <Header />
-          <PrimaryContainer arr={this.arr}/>
+          <PrimaryContainer arr={this.state.arr}/>
   
           <p className="App-intro" >
            Check console because that's the only place you'll see changes atm. 
