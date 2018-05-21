@@ -6,3 +6,13 @@
 .map{
     max-height: 80%;
 }
+
+.footerNav{
+    background-color: blue;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    color: white;
+    padding: 1rem;
+}
