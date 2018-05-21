@@ -20,8 +20,8 @@ class ListData extends React.Component {
     render() {
         return (
             <div onClick={this.toggle}>
-                <h3>{this.props.description}</h3>
-                <p>{this.props.disposition_description}{this.props.event_number}{this.props.latitude}</p>
+                <h3>{this.props.description}Test</h3>
+                <p>{this.props.disposition_description}{this.props.event_number}{this.props.latitudes}</p>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
                     <ModalBody>
