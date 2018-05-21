@@ -6,3 +6,7 @@
 .slide-pane__close {
     display: none;
 }
+
+.slide-pane__overlay{
+    z-index: 10;
+}

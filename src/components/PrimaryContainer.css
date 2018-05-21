@@ -1,6 +1,14 @@
 .primary {
-    background-color: blue;
+    background-color: #00244A;
     color: white;
+}
+
+.filter{
+    background-color: red;
+    z-index: 5;
+    position: absolute;
+    top: 3rem;
+    width: 75%;
 }
 
 .map{
@@ -8,7 +16,7 @@
 }
 
 .footerNav{
-    background-color: blue;
+    background-color: #00244A;
     position: absolute;
     width: 100%;
     bottom: 0;

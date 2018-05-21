@@ -9,12 +9,11 @@ class PrimaryContainer extends Component {
         console.log('Primary Container has arrived');
         return(
             <div>
-                <div className="primary">
-                    <p>This is the main container. Where the map, list, and chart components will render.</p>
+                <div className="filter">
                     <Filter />
-                    <div className = "map">
-                        <MapContainer />
-                    </div>
+                </div>
+                <div className = "map">
+                    <MapContainer />
                 </div>
                 <div className="footerNav">
                     <p>This is the container that will have the router for the main footer nav. </p>
