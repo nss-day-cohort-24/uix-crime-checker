@@ -6,3 +6,17 @@
 .slide-pane__close {
     display: none;
 }
+
+.filterBtn {
+    color: navy;
+}
+
+.rdr-Day.is-selected.is-inRange {
+    background: #e7e7e7 !important;
+    background-color: #e7e7e7 !important;
+}
+
+.rdr-Day.is-selected {
+    background: #e7e7e7 !important;
+    background-color: #e7e7e7 !important;
+}

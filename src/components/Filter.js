@@ -4,6 +4,9 @@ import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Filter.css';
 import CollapseExample from './Collapse';
+import LocationInput from './Location';
+import DateInput from './Date';
+import ComplaintInput from './Complaint';
  
 class Filter extends Component {
     constructor(props) {
@@ -29,9 +32,13 @@ class Filter extends Component {
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <CollapseExample title="Type of Complaint"/>
-                <CollapseExample title="Date of Crime"/>
-                <CollapseExample title="Location"/>
+                <hr></hr>
+                <CollapseExample title="Type of Complaint" form={<ComplaintInput/>}/>
+                <hr></hr>
+                <CollapseExample title="Date of Crime" form={<DateInput/>}/>
+                <hr></hr>
+                <CollapseExample title="Location" form={<LocationInput/>}/>
+                <hr></hr>
             </SlidingPane>
         </div>
     );
