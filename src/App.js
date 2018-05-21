@@ -58,16 +58,22 @@ class App extends Component {
   
   
   render() {
-    return (
-      <div className="App">
-        <Header />
-        {/* <p className="App-intro" runapi={this.runApi()}>
-         Check console because that's the only place you'll see changes atm. 
-        </p> */}
-        <PrimaryContainer />
-      </div>
-    );
-  }
+    
+    // if(this.state.isLoaded){
+      return (
+        <div className="App">
+          <Header />
+          <PrimaryContainer arr={this.state.arr}/>
+        </div>
+      );
+    }
+  //   else{
+
+  //     return(
+  //       <h1> Didn't Go. </h1>
+  //     )
+  //   }
+  // }
 }
 
 export default App;
