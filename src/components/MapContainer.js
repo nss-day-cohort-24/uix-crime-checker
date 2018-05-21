@@ -12,8 +12,8 @@ export class MapContainer extends Component {
             activeMarker: {},
             selectedPlace: {},
             call:null,
-            lat:null,
-            lng:null,
+            // lat:null,
+            // lng:null,
             complain:null,
             zoom:14,
             imagePreviewUrl:''
@@ -28,11 +28,11 @@ export class MapContainer extends Component {
     }
     onMarkerClick(props, marker, e) {
         this.setState({
-          lat:89.99525,
-          lng:36.689,
+        //   lat:89.99525,
+        //   lng:36.689,
             selectedPlace: props,
             activeMarker: marker,
-            complain:"Robb",
+            complain:"Robbery",
             showingInfoWindow: true
             // imagePreviewUrl:
         });
@@ -44,7 +44,8 @@ export class MapContainer extends Component {
         const style = {
           width: '100%',
           height: '100%',
-          border:'2px solid green'
+          border:'2px solid green',
+          color:'black'
         }
         return (
             <div>
@@ -53,8 +54,8 @@ export class MapContainer extends Component {
 
 
 
-<Marker  onClick={this.onMarkerClick} name={'I think Dan is in nashville'} position={this.onMarkerChange}/>
-                    <Marker  onClick={this.onMarkerClick} name={'I think Dan is in nashville'} />
+                    <Marker onClick={this.onMarkerClick} name={'where is calieb'} position={{ lat: 37.778519, lng: -89.405640 }}/>
+                    <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/>
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
