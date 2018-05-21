@@ -36,16 +36,20 @@ class PrimaryContainer extends Component {
             )
 
         return(
-            <div className="primary">
-                <p>This is the main container. Where the map, list, and chart components will render.</p>
-                <Filter />
-                
-                <div className = "map">
-                    
+            <div>
+                <div className="filter">
+                    <Filter />
+                </div>
+                <div className = "map"> 
+                {/* if list state = false, display MapContainer */}
                     <MapContainer />
                 </div>
                 <div className="listDiv">
                     {mappedData}
+                </div>
+                {/* else, display List */}
+                <div className="footerNav">
+                    <p>This is the container that will set state for whether to view map or list. </p>
                 </div>
             </div>
         );

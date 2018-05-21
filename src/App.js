@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
-import FooterNav from './components/FooterNav';
-
 
 class App extends Component {
   constructor(props) {
@@ -84,26 +82,15 @@ class App extends Component {
 
   }
   
-  
   render() {
     
     if(this.state.isLoaded){
       return (
         <div className="App">
-          
-  
           <Header />
           <PrimaryContainer arr={this.state.arr}/>
-  
-          <p className="App-intro" >
-           Check console because that's the only place you'll see changes atm. 
-          </p>
-          
-        <FooterNav />
         </div>
       );
-
-
     }
     else{
 
