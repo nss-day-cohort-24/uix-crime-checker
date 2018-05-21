@@ -29,7 +29,9 @@ class Header extends Component {
             <div>
             <Navbar expand="md" className="topNav">
               <img src={Logo} className="header-logo"></img>
-              <NavbarToggler onClick={this.toggleNavbar} />
+              <button type="button" className="navbar-toggler" onClick={this.toggleNavbar} ><i className="fas fa-bars"></i></button>
+
+
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
