@@ -4,15 +4,21 @@
 }
 
 .filter{
-    background-color: red;
+    background-color: white;
+    border: 1px solid lightslategrey;
     z-index: 5;
-    position: absolute;
-    top: 3rem;
+    position: relative;
+    top: .5rem;
     width: 75%;
+    margin: auto;
 }
 
 .map{
     max-height: 80%;
+    top: 60px;
+    /* media query this for desktop display -- 40px */
+    width: 100%;
+
 }
 
 .footerNav{
