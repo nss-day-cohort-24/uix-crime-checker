@@ -36,9 +36,9 @@ super(props);
             console.log("my result",result);
             result.json().then((resolved) => {
                 // console.log("Test first return ", resolved);
-                let objResults=[];
+                let objResult=[];
                resolved.map((item, index)=>{
-                   objResults.push({
+                   objResult.push({
                          block: item.block,
                          call_received:item.call_received,
                          complaint:item.complaint,
@@ -61,11 +61,13 @@ super(props);
 
                     })
                 });
-                console.log("above the set state ", objResults);
-        this.setState({
-                objResult:objResults,
-                policeLoaded: true,
-              
+                this.setState({
+                    objResult:objResult,
+                    policeLoaded: true,
+                    
+                }, ()=>{
+                    
+                    console.log("State has the object now. ", this.state.objResult);
                     });
 
             });
@@ -87,6 +89,7 @@ super(props);
                       <div className="listDiv">
                         {/* {this.state.objResult} */}
                       </div>
+                      <MapContainer objResult={this.state.objResult}/>
                       <ListData />
                       <div className="footerNav">
                           <p>This is the container that will set state for whether to view map or list. </p>
