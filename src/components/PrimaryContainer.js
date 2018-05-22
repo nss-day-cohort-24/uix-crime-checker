@@ -73,11 +73,8 @@ class PrimaryContainer extends Component {
                     <Filter />
                 </div>
                 <div className="map">
+                    <MapContainer />
                 </div>
-                <div className="listDiv">
-                    {/* {this.state.objResult} */}
-                </div>
-                <MapContainer />
                 <ListData data={this.state.dataArr}/>
                 <div className="footerNav">
                     <p>This is the container that will set state for whether to view map or list. </p>
