@@ -120,7 +120,7 @@ class PrimaryContainer extends Component {
       
         if (this.state.isLoaded) {
             return (
-                <div className="App">
+                <div className="primary">
                     <div className="filter">
                         <Filter />
                     </div>
@@ -129,21 +129,15 @@ class PrimaryContainer extends Component {
                         <MapContainer arr={this.state.arr}/>
                     </div>
                     <div className="listDiv">
-                        
-                    </div>
                     <ListData />
+                    </div>
                     <div className="footerNav">
                         <p>This is the container that will set state for whether to view map or list. </p>
                     </div>
-
-                
                 </div>
             );
-
-
         }
         else {
-
             return (
                 <h1> Didn't Go. </h1>
             )
