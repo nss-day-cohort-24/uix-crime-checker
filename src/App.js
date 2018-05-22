@@ -3,17 +3,27 @@ import './App.css';
 import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
 
-class App extends Component {
+// import FooterNav from './components/FooterNav';
+import MapContainer from './components/MapContainer';
+import Filter from './components/Filter';
+import ListData from './components/ListData';
 
-    
+class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <Header />
-        <PrimaryContainer />
-      </div>
-    );
+
+      return(
+        <div>
+        {/* <h1> from  app.js</h1> */}
+        {/* <ListData/> */}
+          {/* <Filter/> */}
+          <Header/>
+          <PrimaryContainer/>
+          <MapContainer/>
+        </div>
+      );
+    }
+
   }
-}
+
 
 export default App;
