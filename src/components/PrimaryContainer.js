@@ -65,25 +65,7 @@ super(props);
         this.setState({
                 objResult:objResults,
                 policeLoaded: true,
-                //   block:item.block,
-                //   call_received:item.call_received,
-                //   complaint:item.complaint,
-                //   description:item.description,
-                //   disposition_code:item.disposition_code,
-                //   disposition_description:item.disposition_description,
-                //   event_number:item.event_number,
-                //   latitude:item.latitude,
-                //   longitude:item.longitude,
-                //   mapped_location:item.mapped_location,
-                //   rpa:item.rpa,
-                //   sector:item.sector,
-                //   shift:item.shift,
-                //   street_name:item.street_name,
-                //   tencode:item.tencode,
-                //   tencode_suffix:item.tencode_suffix,
-                //   tencode_suffix_description:item.tencode_suffix_description,
-                //   unit_dispatched:item.unit_dispatched,
-                //   zone:item.zone,
+              
                     });
 
             });
@@ -96,9 +78,22 @@ super(props);
   render(){
  
               return(
-            <div className="primary">
-                <p>{this.state.description}</p>
-            </div>
+                  <div className="App">
+                      <div className="filter">
+                          <Filter />
+                      </div>
+                      <div className="map">
+                         </div>
+                      <div className="listDiv">
+                        {/* {this.state.objResult} */}
+                      </div>
+                      <ListData />
+                      <div className="footerNav">
+                          <p>This is the container that will set state for whether to view map or list. </p>
+                      </div>
+
+
+                  </div>
         );
     }
 }
