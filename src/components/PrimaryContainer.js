@@ -9,17 +9,60 @@ import ListData from './ListData';
 class PrimaryContainer extends Component {
 // console.log('hi mu mu');
   constructor(props) {
-super(props);
- this.state = {
-   objResult:[],
-   policeLoaded:false,
-   error:null,
+    super(props);
+    this.state = {
+        objResult:[],
+        policeLoaded:false,
+        error:null,
+        locationValue: ''
  }
  this.getPolice=this.getPolice.bind(this);
-//  this.handleChange = this.handleChange.bind(this);
-//  this.handlesubmitpro = this.handlesubmitpro.bind(this);
+ this.handleSubmit = this.handleSubmit.bind(this);
+ this.getFormData = this.getFormData.bind(this);
 }
 
+    
+      handleSubmit() {
+        alert('A location was submitted: ' + this.state.locationValue);
+      }
+
+      getFormData(object){
+            this.setState({
+                locationValue: object
+            })
+            // console.log('getFormData object', object);
+            // .then(() => {this.handleSubmit()});
+      }
+    
+
+
+      
+        // //map over arr here
+        // const mappedData = this.props.arr.map((item)  =>
+        //     <div key={item.complaint}>
+        //         <ListData
+        //             block={item.block}
+        //             call_received={item.call_received}
+        //             complaint={item.complaint}
+        //             description={item.description}
+        //             disposition_code={item.disposition_code}
+        //             disposition_description={item.disposition_description}
+        //             event_number={item.event_number}
+        //             latitude={item.latitude}
+        //             longitude={item.longitude}
+        //             mapped_location={item.mapped_location}
+        //             rpa={item.rpa}
+        //             sector={item.sector}
+        //             shift={item.shift}
+        //             street_name={item.street_name}
+        //             tencode={item.tencode}
+        //             tencode_suffix={item.tencode_suffix}
+        //             tencode_suffix_description={item.tencode_suffix_description}
+        //             unit_dispatched={item.unit_dispatched}
+        //             zone={item.zone}
+        //         />
+        //     </div>
+        //     )
 
     getPolice(){
 
@@ -62,7 +105,7 @@ super(props);
                     })
                 });
                 console.log("above the set state ", objResults);
-        this.setState({
+            this.setState({
                 objResult:objResults,
                 policeLoaded: true,
               
@@ -75,24 +118,23 @@ super(props);
     componentDidMount() {
         this.getPolice();
     }
+
+
   render(){
- 
               return(
                   <div className="App">
                       <div className="filter">
-                          <Filter />
+                        <Filter submit={this.getFormData} value={this.locationValue} />
                       </div>
                       <div className="map">
                          </div>
                       <div className="listDiv">
                         {/* {this.state.objResult} */}
-                      </div>
                       <ListData />
+                      </div>
                       <div className="footerNav">
                           <p>This is the container that will set state for whether to view map or list. </p>
                       </div>
-
-
                   </div>
         );
     }
