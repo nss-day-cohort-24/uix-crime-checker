@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PrimaryContainer from './components/PrimaryContainer';
 import Header from './components/Header';
+
 import FooterNav from './components/FooterNav';
 import MapContainer from './components/MapContainer';
 import Filter from './components/Filter';
@@ -20,6 +21,7 @@ class App extends Component {
         </div>
       );
     }
+
   }
 
 

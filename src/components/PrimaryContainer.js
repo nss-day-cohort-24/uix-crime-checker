@@ -3,7 +3,9 @@ import './PrimaryContainer.css';
 import MapContainer from './MapContainer';
 import Filter from './Filter';
 import ListData from './ListData';
+
 // console.log('hi mu mu')
+
 class PrimaryContainer extends Component {
 // console.log('hi mu mu');
   constructor(props) {
@@ -17,6 +19,7 @@ super(props);
 //  this.handleChange = this.handleChange.bind(this);
 //  this.handlesubmitpro = this.handlesubmitpro.bind(this);
 }
+
 
     getPolice(){
 

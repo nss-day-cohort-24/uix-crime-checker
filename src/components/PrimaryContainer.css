@@ -1,8 +1,20 @@
 .primary {
-    background-color: blue;
-    color: white;
+    overflow: hidden;
 }
 
 .map{
     max-height: 80%;
+    top: 65px;
+    /* media query this for desktop display -- 40px */
+    width: 100%;
+}
+
+.footerNav{
+    background-color: #00244A;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    color: white;
+    padding: 1rem;
 }
