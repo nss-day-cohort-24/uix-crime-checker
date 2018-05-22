@@ -3,16 +3,22 @@ import './Filter.css';
 
 class LocationInput extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {value: null};
+
+      }
+
     render() {
         return (
             <div>
                 <label>
                     Address
-                    <input type="text" name="Address" />
+                    <input type="text" name="Address" value={this.state.value} onChange={this.props.Change}/>
                 </label>
                 <label>
                     Zip Code
-                    <input type="text" name="Address" />
+                    <input id="zip" type="text" name="Address" />
                 </label>
                 <label>
                     Search Radius

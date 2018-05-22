@@ -6,6 +6,24 @@ import ListData from './ListData';
 
 class PrimaryContainer extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
+    
+
         render(){
       
         //map over arr here
@@ -35,10 +53,12 @@ class PrimaryContainer extends Component {
             </div>
             )
 
+        
+
         return(
             <div className="primary">
                 <p>This is the main container. Where the map, list, and chart components will render.</p>
-                <Filter />
+                <Filter submit={this.handleSubmit} value={this.props.value1} onChange={this.handleChange}/>
                 
                 <div className = "map">
                     

@@ -34,21 +34,13 @@ class Filter extends Component {
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.props.submit}>
                     <hr></hr>
                     <CollapseExample title="Type of Complaint" form={<ComplaintInput/>}/>
-
-                                    {/* // <div>
-                                    //     <div className="filterBtn" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{this.props.title}</div>
-                                    //     <Collapse isOpen={this.state.collapse}>
-                                    //         <div>{this.props.form}</div>
-                                    //     </Collapse>
-                                    // </div> */}
-
                     <hr></hr>
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
                     <hr></hr>
-                    <CollapseExample title="Location" form={<LocationInput/>}/>
+                    <CollapseExample value1={this.props.value} Change={this.props.onChange} title="Location" form={<LocationInput/>}/>
                     <hr></hr>
                     <input type="submit" value="Submit" />
                 </form>
