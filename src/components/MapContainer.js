@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import '../App.css';
 // import icon  from '../img/del.png';
+    // let {this.props.latitude}=parseInt{this.props.longitude};
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
-        this.onMarkerChange = this.onMarkerChange.bind(this);
-         this.onMarkerClick = this.onMarkerClick.bind(this);
+        // this.onMarkerChange = this.onMarkerChange.bind(this);
+         // this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
@@ -20,23 +21,23 @@ export class MapContainer extends Component {
         };
 
     }
-    onMarkerChange(props,marker){
-      this.setState({
-         lat:78.99525,
-         lng:45.689
-      });
-    }
-    onMarkerClick(props, marker, e) {
-        this.setState({
-        //   lat:89.99525,
-        //   lng:36.689,
-            selectedPlace: props,
-            activeMarker: marker,
-            complain:"Robbery",
-            showingInfoWindow: true
-            // imagePreviewUrl:
-        });
-    }
+    // onMarkerChange(props,marker){
+    //   this.setState({
+    //      lat:78.99525,
+    //      lng:45.689
+    //   });
+    // }
+    // onMarkerClick(props, marker, e) {
+    //     this.setState({
+    //       lat:{this.props.latitude},
+    //       lng:{this.props.longitude},
+    //         selectedPlace: props,
+    //         activeMarker: marker,
+    //         complain:"Robbery",
+    //         showingInfoWindow: true
+    //         // imagePreviewUrl:
+    //     });
+    // }
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -47,6 +48,9 @@ export class MapContainer extends Component {
           border:'2px solid green',
           color:'black'
         }
+        // const num=()=>{
+        // let {this.props.latitude}=parseInt{this.props.longitude};
+        // }
         return (
             <div>
 
@@ -54,7 +58,7 @@ export class MapContainer extends Component {
 
 
 
-                    <Marker onClick={this.onMarkerClick} name={'where is calieb'} position={{ lat: 37.778519, lng: -89.405640 }}/>
+                    <Marker onClick={this.onMarkerClick} name={'where is calieb'} />
                     <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/>
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
