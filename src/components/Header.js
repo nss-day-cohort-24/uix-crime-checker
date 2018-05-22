@@ -3,14 +3,9 @@ import './Header.css';
 import {
     Collapse,
     Navbar,
-    NavbarToggler,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavLink } from 'reactstrap';
 import Logo from '../img/CrimeCheck_ CClogoWhite.png';
 
 class Header extends Component {
@@ -28,7 +23,7 @@ class Header extends Component {
         return(
             <div>
             <Navbar expand="md" className="topNav">
-              <img src={Logo} className="header-logo"></img>
+              <img src={Logo} className="header-logo" alt="Crime Checker logo"></img>
               <button type="button" className="navbar-toggler" onClick={this.toggleNavbar} ><i className="fas fa-bars"></i></button>
 
 

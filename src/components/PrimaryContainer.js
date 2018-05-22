@@ -131,6 +131,9 @@ class PrimaryContainer extends Component {
                     <div className="listDiv">
                     <ListData />
                     </div>
+                    <div className="footerNav">
+                        <p>This is the container that will set state for whether to view map or list. </p>
+                    </div>
                 </div>
             );
         }
