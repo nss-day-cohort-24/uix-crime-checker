@@ -36,7 +36,7 @@ class PrimaryContainer extends Component {
             )
 
         return(
-            <div>
+            <div className="primary">
                 <div className="filter">
                     <Filter />
                 </div>
