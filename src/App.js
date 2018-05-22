@@ -61,7 +61,7 @@ class App extends Component {
     fetch('https://data.nashville.gov/resource/28i3-48zr.json?block=0',{
       method: "GET",
       data: {
-        "$limit" : 5000,
+        "$limit" : 5,
         "$$app_token" : "r1zPUd6qffmC6asW1Y8pPPhuj"
         
       },

@@ -14,12 +14,26 @@ class Filter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isPaneOpenLeft: false
+            isPaneOpenLeft: false,
+            locationValue: ''
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.submit = this.submit.bind(this);
     }
- 
+    
+
     componentDidMount() {
         Modal.setAppElement(this.el);
+    }
+
+    handleChange(formValue, value) {
+        this.setState({locationValue: value});
+        console.log('locationValue in PC', this.state.locationValue);
+      }
+    
+    submit(event){
+        this.props.submit(this.state.locationValue);
+        event.preventDefault();
     }
   
   render() {
@@ -34,13 +48,13 @@ class Filter extends Component {
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <form onSubmit={this.props.submit}>
-                    <hr></hr>
+                <form onSubmit={this.submit}>
+                    {/* <hr></hr>
                     <CollapseExample title="Type of Complaint" form={<ComplaintInput/>}/>
                     <hr></hr>
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
-                    <hr></hr>
-                    <CollapseExample value1={this.props.value} Change={this.props.onChange} title="Location" form={<LocationInput/>}/>
+                    <hr></hr> */}
+                    <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.handleChange}/>}/>
                     <hr></hr>
                     <input type="submit" value="Submit" />
                 </form>

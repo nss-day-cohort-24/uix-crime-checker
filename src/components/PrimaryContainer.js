@@ -8,19 +8,28 @@ class PrimaryContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {locationValue: ''};
     
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getFormData = this.getFormData.bind(this);
       }
 
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
+    //   handleChange(formValue, value) {
+    //     this.setState({formValue: value});
+    //     console.log('locationValue in PC', this.state.locationValue);
+    //   }
     
-      handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+      handleSubmit() {
+        alert('A location was submitted: ' + this.state.locationValue);
+      }
+
+      getFormData(object){
+            this.setState({
+                locationValue: object
+            })
+            // console.log('getFormData object', object);
+            // .then(() => {this.handleSubmit()});
       }
     
 
@@ -58,7 +67,7 @@ class PrimaryContainer extends Component {
         return(
             <div className="primary">
                 <p>This is the main container. Where the map, list, and chart components will render.</p>
-                <Filter submit={this.handleSubmit} value={this.props.value1} onChange={this.handleChange}/>
+                <Filter submit={this.getFormData} value={this.locationValue} />
                 
                 <div className = "map">
                     
