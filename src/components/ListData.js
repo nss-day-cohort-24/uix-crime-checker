@@ -23,24 +23,12 @@ class ListData extends React.Component {
     // expart default latitude;
 
     render() {
-<<<<<<< HEAD
-//       latit = () => {
-//   let Dan={this.props.longitude};
-//   Dan=parseInt{this.props.longitude};
-//  };
- 
-    // let {this.props.longitude}=parse{this.props.longitudeIn};
-        // console.log("in render description", this.props.description);
-        return (
-            <div onClick={this.toggle}>
-                <h2>{this.props.description}Test</h2>
-                <p>lon:{this.latit} </p>
-=======
+
         return (
             <div onClick={this.toggle}>
                 <h3>{this.props.description}Test</h3>
                 <p>{this.props.disposition_description}{this.props.event_number}{this.props.latitudes}</p>
->>>>>>> master
+
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
                     <ModalBody>
