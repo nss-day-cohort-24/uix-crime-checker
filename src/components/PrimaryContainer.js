@@ -12,12 +12,25 @@ class PrimaryContainer extends Component {
         super(props);
         this.state = {
             dataArr: [],
-            error: null
+            error: null,
+            locationValue: ''
         }
-        //  this.handleChange = this.handleChange.bind(this);
-        //  this.handlesubmitpro = this.handlesubmitpro.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.getFormData = this.getFormData.bind(this);
+       }
+       
+           
+    handleSubmit() {
+        alert('A location was submitted: ' + this.state.locationValue);
     }
-
+       
+    getFormData(object){
+        this.setState({
+            locationValue: object
+        })
+            // console.log('getFormData object', object);
+            // .then(() => {this.handleSubmit()});
+        }
 
                 // resolved.map((item, index) => {
                     // objResults.push({
@@ -75,7 +88,9 @@ class PrimaryContainer extends Component {
                 <div className="map">
                     <MapContainer />
                 </div>
-                <ListData data={this.state.dataArr}/>
+                <div className="listDiv">
+                    <ListData data={this.state.dataArr}/>
+                </div>
                 <div className="footerNav">
                     <p>This is the container that will set state for whether to view map or list. </p>
                 </div>
