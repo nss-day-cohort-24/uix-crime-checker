@@ -1,34 +1,65 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import '../App.css';
 // import icon  from '../img/del.png';
+    // let {this.props.latitude}=parseInt{this.props.longitude};
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
-        this.onMarkerClick = this.onMarkerClick.bind(this);
+        // this.onMarkerChange = this.onMarkerChange.bind(this);
+         // this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
-            selectedPlace: {}
+            selectedPlace: {},
+            call:null,
+            // lat:null,
+            // lng:null,
+            complain:null,
+            zoom:14,
+            imagePreviewUrl:''
         };
+
     }
-    onMarkerClick(props, marker, e) {
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        });
-    }
+    // onMarkerChange(props,marker){
+    //   this.setState({
+    //      lat:78.99525,
+    //      lng:45.689
+    //   });
+    // }
+    // onMarkerClick(props, marker, e) {
+    //     this.setState({
+    //       lat:{this.props.latitude},
+    //       lng:{this.props.longitude},
+    //         selectedPlace: props,
+    //         activeMarker: marker,
+    //         complain:"Robbery",
+    //         showingInfoWindow: true
+    //         // imagePreviewUrl:
+    //     });
+    // }
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
         }
-
+        const style = {
+          width: '100%',
+          height: '100%',
+          border:'2px solid green',
+          color:'black'
+        }
+        // const num=()=>{
+        // let {this.props.latitude}=parseInt{this.props.longitude};
+        // }
         return (
             <div>
-                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={14} className={"map"}>
-                <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
 
-                    <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 37.778519, lng: -89.405640 }} />
+                <Map style={style} google={this.props.google}zoom={5} className={"map"}>
+
+
+
+                    <Marker onClick={this.onMarkerClick} name={'where is calieb'} />
+                    <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/>
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
