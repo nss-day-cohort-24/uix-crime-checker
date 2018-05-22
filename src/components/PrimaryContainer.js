@@ -6,6 +6,17 @@ import ListData from './ListData';
 
 // console.log('hi mu mu')
 
+// function NewPolice(props){
+//     return(
+//         <div>
+//             {props.policeLoaded}
+//             <div>
+//                 <h1>{props.message}</h1>
+//             </div>
+//         </div>
+//     )
+// }
+
 class PrimaryContainer extends Component {
 // console.log('hi mu mu');
   constructor(props) {
@@ -26,7 +37,7 @@ super(props);
         fetch(`https://data.nashville.gov/resource/28i3-48zr.json?block=0`,{
         method: "GET",
         data: {
-          "$limit" : 5000,
+          "$limit" : 50,
           "$$app_token" : "r1zPUd6qffmC6asW1Y8pPPhuj"
         },
          header: {
@@ -45,7 +56,7 @@ super(props);
                          description:item.description,
                          disposition_code:item.disposition_code,
                          disposition_description:item.disposition_description,
-                         event_number:item.event_number,
+                         event_number: item.event_number,
                          latitude:item.latitude,
                          longitude:item.longitude,
                          mapped_location:item.mapped_location,
@@ -61,33 +72,54 @@ super(props);
 
                     })
                 });
-                console.log("above the set state ", objResults);
-        this.setState({
-                objResult:objResults,
-                policeLoaded: true,
-              
-                    });
-
+                this.setState({
+                    objResult:objResults,
+                    policeLoaded: true,
+                    
+                });
+                
             });
         });
-
+        
           }
     componentDidMount() {
         this.getPolice();
     }
   render(){
- 
+  const{error, policeLoaded, objResult}=this.state;
+  console.log("this is below render:",this.state.objResult);
+      if (error) {
+          return (
+              <div>
+                  <div>Error: {error.message}</div>
+              </div>
+          )
+        }else if (!policeLoaded){
+     return (
+         <div> Loading ...</div>
+     )
+ }else{
+     let policeList =objResult.map((item, index)=>
+        //  console.log("inside policeList")
+         <div class="policeList" key={item}>
+
+          { item.event_number}
+        
+    </div>)
+ }
               return(
                   <div className="App">
+                      {/* {console.log("policeList",policeList)} */}
                       <div className="filter">
                           <Filter />
                       </div>
                       <div className="map">
                          </div>
                       <div className="listDiv">
-                        {/* {this.state.objResult} */}
+                       {/* <p> {this.state.objResult}</p> */}
                       </div>
-                      <ListData />
+                      <ListData/>
+                      {/* {policeList} */}
                       <div className="footerNav">
                           <p>This is the container that will set state for whether to view map or list. </p>
                       </div>

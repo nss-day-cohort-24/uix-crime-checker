@@ -26,7 +26,7 @@ class ListData extends React.Component {
 
         return (
             <div onClick={this.toggle}>
-                <h3>{this.props.description}Test</h3>
+                <h3>{this.props.objResult}</h3>
                 <p>{this.props.disposition_description}{this.props.event_number}{this.props.latitudes}</p>
 
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

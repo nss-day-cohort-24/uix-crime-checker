@@ -18,7 +18,7 @@ class App extends Component {
           {/* <Filter/> */}
           <Header/>
           <PrimaryContainer/>
-        <MapContainer/>
+        {/* <MapContainer/> */}
         </div>
       );
     }
