@@ -11,19 +11,39 @@ class PrimaryContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            objResult: [],
-            policeLoaded: false,
-            error: null,
+            dataArr: [],
+            error: null
         }
-        this.getPolice = this.getPolice.bind(this);
         //  this.handleChange = this.handleChange.bind(this);
         //  this.handlesubmitpro = this.handlesubmitpro.bind(this);
     }
 
 
-    getPolice() {
+                // resolved.map((item, index) => {
+                    // objResults.push({
+                    //     block: item.block,
+                    //     call_received: item.call_received,
+                    //     complaint: item.complaint,
+                    //     description: item.description,
+                    //     disposition_code: item.disposition_code,
+                    //     disposition_description: item.disposition_description,
+                    //     event_number: item.event_number,
+                    //     latitude: item.latitude,
+                    //     longitude: item.longitude,
+                    //     mapped_location: item.mapped_location,
+                    //     rpa: item.rpa,
+                    //     sector: item.sector,
+                    //     shift: item.shift,
+                    //     street_name: item.street_name,
+                    //     tencode: item.tencode,
+                    //     tencode_suffix: item.tencode_suffix,
+                    //     tencode_suffix_description: item.tencode_suffix_description,
+                    //     unit_dispatched: item.unit_dispatched,
+                    //     zone: item.zone,
 
-        fetch(`https://data.nashville.gov/resource/28i3-48zr.json?block=0`, {
+        
+    componentDidMount() {
+        fetch(`https://data.nashville.gov/resource/28i3-48zr.json`, {
             method: "GET",
             data: {
                 "$limit": 100,
@@ -32,49 +52,19 @@ class PrimaryContainer extends Component {
             header: {
                 "Access-Control-Allow-Origin": "*"
             }
-        }).then((result) => {
-            console.log("my result", result);
-            result.json().then((resolved) => {
-                // console.log("Test first return ", resolved);
-                let objResults = [];
-                resolved.map((item, index) => {
-                    objResults.push({
-                        block: item.block,
-                        call_received: item.call_received,
-                        complaint: item.complaint,
-                        description: item.description,
-                        disposition_code: item.disposition_code,
-                        disposition_description: item.disposition_description,
-                        event_number: item.event_number,
-                        latitude: item.latitude,
-                        longitude: item.longitude,
-                        mapped_location: item.mapped_location,
-                        rpa: item.rpa,
-                        sector: item.sector,
-                        shift: item.shift,
-                        street_name: item.street_name,
-                        tencode: item.tencode,
-                        tencode_suffix: item.tencode_suffix,
-                        tencode_suffix_description: item.tencode_suffix_description,
-                        unit_dispatched: item.unit_dispatched,
-                        zone: item.zone,
+        }).then((results) => {
+            console.log("my result", results);
+            return results.json();
+        }).then((data) => {
+            let stuff = Object.values(data);
+            console.log ("dan's stuff", stuff);
+            this.setState({
+                dataArr: stuff
+            })
 
-                    })
-                });
-                console.log("above the set state ", objResults);
-                this.setState({
-                    objResult: objResults,
-                    policeLoaded: true,
-
-                });
-
-            });
         });
+    }
 
-    }
-    componentDidMount() {
-        this.getPolice();
-    }
     render() {
 
         return (
@@ -87,7 +77,8 @@ class PrimaryContainer extends Component {
                 <div className="listDiv">
                     {/* {this.state.objResult} */}
                 </div>
-                <ListData />
+                <MapContainer />
+                <ListData data={this.state.dataArr}/>
                 <div className="footerNav">
                     <p>This is the container that will set state for whether to view map or list. </p>
                 </div>
