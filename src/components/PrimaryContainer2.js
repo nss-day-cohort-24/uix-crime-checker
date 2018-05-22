@@ -42,7 +42,7 @@ class PrimaryContainer extends Component {
 
                 <div className="map">
 
-                    <MapContainer />
+                    <MapContainer/>
                 </div>
                 <div className="listDiv">
                     {mappedData}

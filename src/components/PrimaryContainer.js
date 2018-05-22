@@ -20,18 +20,30 @@ import ListData from './ListData';
 class PrimaryContainer extends Component {
 // console.log('hi mu mu');
   constructor(props) {
-super(props);
- this.state = {
-   objResult:[],
-   policeLoaded:false,
-   error:null,
+    super(props);
+    this.state = {
+        objResult:[],
+        policeLoaded:false,
+        error:null,
+        locationValue: ''
  }
  this.getPolice=this.getPolice.bind(this);
-//  this.handleChange = this.handleChange.bind(this);
-//  this.handlesubmitpro = this.handlesubmitpro.bind(this);
+ this.handleSubmit = this.handleSubmit.bind(this);
+ this.getFormData = this.getFormData.bind(this);
 }
 
+    
+      handleSubmit() {
+        alert('A location was submitted: ' + this.state.locationValue);
+      }
 
+      getFormData(object){
+            this.setState({
+                locationValue: object
+            })
+           
+      }
+    
     getPolice(){
 
         fetch(`https://data.nashville.gov/resource/28i3-48zr.json?block=0`,{
@@ -72,12 +84,14 @@ super(props);
 
                     })
                 });
+
                 this.setState({
                     objResult:objResults,
                     policeLoaded: true,
                     
                 });
                 
+
             });
         });
         
@@ -85,7 +99,10 @@ super(props);
     componentDidMount() {
         this.getPolice();
     }
+
+
   render(){
+
   const{error, policeLoaded, objResult}=this.state;
   console.log("this is below render:",this.state.objResult);
       if (error) {
@@ -107,24 +124,25 @@ super(props);
         
     </div>)
  }
+
               return(
                   <div className="App">
                       {/* {console.log("policeList",policeList)} */}
                       <div className="filter">
-                          <Filter />
+                        <Filter submit={this.getFormData} value={this.locationValue} />
                       </div>
                       <div className="map">
                          </div>
                       <div className="listDiv">
+
                        {/* <p> {this.state.objResult}</p> */}
                       </div>
                       <ListData/>
                       {/* {policeList} */}
+
                       <div className="footerNav">
                           <p>This is the container that will set state for whether to view map or list. </p>
                       </div>
-
-
                   </div>
         );
     }
