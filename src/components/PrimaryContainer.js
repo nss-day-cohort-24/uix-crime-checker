@@ -102,7 +102,7 @@ super(props);
      let policeList =objResult.map((item, index)=>
         //  console.log("inside policeList")
          <div class="policeList" key={item}>
-
+             <p>{item.shift}</p>
           { item.event_number}
         
     </div>)
