@@ -27,9 +27,16 @@ class Filter extends Component {
     }
 
     handleChange(formValue, value) {
-        this.setState({locationValue: value});
+        switch(formValue){
+            case 'locationValue':
+            this.setState({'locationValue': value});
+            break;
+            // case -- this is where other cases will go for other form values
+        }
+        
         console.log('locationValue in PC', this.state.locationValue);
       }
+
     
     submit(event){
         this.props.submit(this.state.locationValue);
