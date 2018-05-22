@@ -23,3 +23,16 @@
     border: 1px solid #fff !important;
     color: white;
 }
+
+.navbar-collapse{
+    z-index: 9;
+    background-color: #004794;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover, active{
+    text-decoration: underline !important;
+}
