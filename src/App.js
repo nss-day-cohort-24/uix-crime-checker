@@ -13,7 +13,6 @@ class App extends Component {
       return(
         <div>
         {/* <h1> from  app.js</h1> */}
-        {/* <ListData/> */}
           {/* <Filter/> */}
           <Header/>
           <PrimaryContainer/>
