@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-// import icon  from '../img/del.png';
+import MarkerContainer from './MarkerContainer';
+
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
@@ -26,14 +27,7 @@ export class MapContainer extends Component {
         return (
             <div>
                 <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={14} className={"map"}>
-                <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
-
-                    <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 37.778519, lng: -89.405640 }} />
-                      <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-                        <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow>
+                 <MarkerContainer arr={this.props.arr}/>
                 </Map>
             </div>
         );
