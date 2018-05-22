@@ -3,6 +3,8 @@ import './PrimaryContainer.css';
 import MapContainer from './MapContainer';
 import Filter from './Filter';
 import ListData from './ListData';
+import MapIcon from '../img/mapIcon.png';
+import ListIcon from '../img/listIcon.png';
 // import FooterNav from './FooterNav';
 
 class PrimaryContainer extends Component {
@@ -131,15 +133,15 @@ class PrimaryContainer extends Component {
                     <div className="listDiv">
                     <ListData />
                     </div>
-                    <div className="footerNav">
-                        <p>This is the container that will set state for whether to view map or list. </p>
+                    <div className="footerNav row">
+                        <div className="col-auto mx-auto"><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div>|<div className="col-auto mx-auto"><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
                     </div>
                 </div>
             );
         }
         else {
             return (
-                <h1> Didn't Go. </h1>
+                <h1> Loading... </h1>
             )
         }
     }

@@ -16,5 +16,12 @@
     bottom: 0;
     z-index: 10;
     color: white;
-    padding: 1rem;
+    padding: 1rem 1rem .5rem 1rem;
+    text-transform: uppercase;
+    line-height: 1.4rem;
+}
+
+.footer-icon{
+    max-width: 50px;
+    margin-bottom: 5px;
 }
