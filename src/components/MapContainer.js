@@ -6,27 +6,26 @@ import '../App.css';
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
-        this.onMarkerChange = this.onMarkerChange.bind(this);
+        // this.onMarkerChange = this.onMarkerChange.bind(this);
          this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
             call:null,
-            lat:null,
-            lng:null,
+            
             complain:null,
             zoom:14,
             imagePreviewUrl:''
         };
 
     }
-    onMarkerChange(props,marker){
-      this.setState({
-         lat:78.99525,
-         lng:45.689
-      });
-    }
+    // onMarkerChange(props,marker){
+    //   this.setState({
+    //      lat:78.99525,
+    //      lng:45.689
+    //   });
+    // }
     onMarkerClick(props, marker, e) {
         this.setState({
          
@@ -47,9 +46,7 @@ export class MapContainer extends Component {
           border:'2px solid green',
           color:'black'
         }
-        // const num=()=>{
-        // let {this.props.latitude}=parseInt{this.props.longitude};
-        // }
+      
         return (
             <div>
 
