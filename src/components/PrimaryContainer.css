@@ -4,9 +4,10 @@
 
 .map{
     max-height: 80%;
-    top: 65px;
+    top: 60px;
     /* media query this for desktop display -- 40px */
     width: 100%;
+    z-index: 1;
 }
 
 .footerNav{
@@ -16,5 +17,18 @@
     bottom: 0;
     z-index: 10;
     color: white;
-    padding: 1rem;
+    padding: 1rem 1rem .5rem 1rem;
+    text-transform: uppercase;
+    line-height: 1.4rem;
+}
+
+.footer-icon{
+    max-width: 50px;
+    margin-bottom: 5px;
+}
+
+
+.borderRule{
+    border-right: 1px solid white;
+    padding-right: 5rem !important;
 }
