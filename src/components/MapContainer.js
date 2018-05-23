@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import MarkerContainer from './MarkerContainer';
+
 import '../App.css';
-// import icon  from '../img/del.png';
-    // let {this.props.latitude}=parseInt{this.props.longitude};
+
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
@@ -20,21 +21,9 @@ export class MapContainer extends Component {
         };
 
     }
-    // onMarkerChange(props,marker){
-    //   this.setState({
-    //      lat:78.99525,
-    //      lng:45.689
-    //   });
-    // }
-    onMarkerClick(props, marker, e) {
-        this.setState({
-         
-            selectedPlace: props,
-            activeMarker: marker,
-            complain:"Robbery",
-            showingInfoWindow: true
-            // imagePreviewUrl:
-        });
+    componentWillUpdate(){
+
+        console.log("Rendered", this.props.objResult);
     }
     render() {
         if (!this.props.google) {
@@ -49,6 +38,13 @@ export class MapContainer extends Component {
       
         return (
             <div>
+                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={5} className={"map"}>
+                 {
+                   this.props.data.map((item, index) => (
+                       
+                        <Marker title={'This is a point'} onClick={this.onMarkerClick} name={item.description} position={{ lat: parseFloat(item.latitude), lng: parseFloat(item.longitude) }} 
+                        />
+                     ))
 
                 <Map style={style} google={this.props.google}zoom={5} className={"map"}>
 
