@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import './Filter.css';
 
 class CollapseExample extends Component {
     constructor(props) {
@@ -15,14 +16,9 @@ class CollapseExample extends Component {
     render() {
         return (
             <div>
-                <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{this.props.title}</Button>
+                <div className="filterBtn" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{this.props.title}</div>
                 <Collapse isOpen={this.state.collapse}>
-                    <div>
-                        Anim pariatur cliche reprehenderit,
-                        enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                        anim keffiyeh helvetica, craft beer labore wes anderson cred
-                        nesciunt sapiente ea proident.
-                    </div>
+                    <div>{this.props.form}</div>
                 </Collapse>
             </div>
         );
