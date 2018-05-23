@@ -86,7 +86,7 @@ class PrimaryContainer extends Component {
                     <Filter />
                 </div>
                 <div className="map">
-                    <MapContainer />
+                    <MapContainer data={this.state.dataArr}/>
                 </div>
                 <div className="listDiv">
                     <ListData data={this.state.dataArr}/>

@@ -23,24 +23,13 @@ export class MarkerContainer extends Component {
             });
         }
         
-        renderPoints(){
-            //let parseable = this.props.arr;
-            // this.props.arr.forEach((element) => {
-                
-            // });((element)=>{
-            //     parseable += `${element.longitude}`;
-
-            // }); 
-
-            return (
-                <div>
-                    
-                </div>
-            );
-        }
+        
         render(){
             return(
             this.renderPoints()
+
+
+
             );
         
             // return(
