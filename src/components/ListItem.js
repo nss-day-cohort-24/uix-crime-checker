@@ -19,7 +19,36 @@ class ListItem extends React.Component {
 
     render() {
         return (
-            <div onClick={this.toggle}>
+            <div class="container">
+                <div id="rowli"class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 check">
+                        <h5 class="descrip">{this.props.description}</h5>
+                         <p>{this.props.event_number}</p>
+                         <ul>
+                            <li>{this.props.call_received}</li>
+                             <li>{this.props.block}</li>
+                             <li>{this.props.street_name}</li>
+                         </ul>
+                        </div>
+                    <div class="col-md-2"></div>
+                </div>
+                
+                {/* <h3>{this.props.description}</h3> */}
+                {/* <table class="table table-striped">
+                     <tbody>
+                        <tr>
+                            {/* <th scope="row">{this.props.event_number}</th> */}
+                            {/* <td>{this.props.event_number}</td>
+                            <td>{this.props.event_number}</td>
+                            <td>{this.props.event_number}</td>
+                            <td>{this.props.event_number}</td>
+                            <td>{this.props.event_number}</td>
+                            <td>{this.props.event_number}</td>
+                        </tr>
+                    </tbody>
+                </table>  */}
+            {/* <div onClick={this.toggle}>
                 <h3>{this.props.description}</h3>
                 <p>Disposition Description:{this.props.disposition_description}</p>
                 <p>Event Number:{this.props.event_number}</p>
@@ -35,7 +64,9 @@ class ListItem extends React.Component {
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
-            </div>
+            </div> */}
+            
+         </div>
         );
     }
 }
