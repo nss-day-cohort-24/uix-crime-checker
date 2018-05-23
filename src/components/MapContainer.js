@@ -40,12 +40,11 @@ export class MapContainer extends Component {
             <div>
                 <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={5} className={"map"}>
                  {
-
-                     this.props.data.map((item, index) => {
-                        <Marker title={'This is a point'} onClick={this.onMarkerClick} name={'Police Call!'} position={{ lat: parseInt(item.latitude), lng: parseInt(item.longitude) }} 
+                   this.props.data.map((item, index) => (
+                       
+                        <Marker title={'This is a point'} onClick={this.onMarkerClick} name={item.description} position={{ lat: parseFloat(item.latitude), lng: parseFloat(item.longitude) }} 
                         />
-
-                     })
+                     ))
 
                  }
                 </Map>

@@ -26,24 +26,22 @@ export class MarkerContainer extends Component {
         
         render(){
             return(
-            this.renderPoints()
+                <div>
+                {
 
+                    this.props.data.map((item, index) => {
+                       <Marker title={'This is a point'} onClick={this.onMarkerClick} name={'Police Call!'} position={{ lat: parseInt(item.latitude), lng: parseInt(item.longitude) }} 
+                       />
+
+                    })
+
+                }
+                </div>
 
 
             );
         
-            // return(
-            //     <div>
-            //     <Marker onClick={this.onMarkerClick} name={'Me and dan'}/>
 
-            //     <Marker title={'The marker`s title will appear as a tooltip.'} onClick={this.onMarkerClick} name={'Dan in nashville'} position={{ lat: 37.778519, lng: -89.405640 }} />
-            //     <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-            //         <div>
-            //             <h1>{this.state.selectedPlace.name}</h1>
-            //         </div>
-            //     </InfoWindow>
-            //     </div>
-            // );
         }
 }
 
