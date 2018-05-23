@@ -73,7 +73,7 @@ class PrimaryContainer extends Component {
 
         let view = mapView ? 
         (<div className="map">
-            <MapContainer />
+            <MapContainer data={this.state.dataArr} />
         </div>) 
         :
         (<div className="listDiv">
