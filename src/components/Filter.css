@@ -26,13 +26,34 @@
 }
 
 .filter{
-    background-color: white;
-    border: 1px solid lightslategrey;
+    background-color: #004794;
+    /* opacity: 0.8; */
     z-index: 5;
     position: absolute;
-    top: 7rem;
-    left: 0;
-    right: 0;
-    width: 80%;
-    margin: auto;
+    bottom: 6rem;
+    padding: 5px;
+    /* right: 0;*/
+    width: 100%;
+}
+.filter button{
+    color: white;
+    background-color: #004794;
+    border: 0;
+    font-size: 1.5rem;
+    /* margin-top:  */
+}
+
+/* ///////////////////////////////////// */
+/*********  Start media queries  *********/
+/* ///////////////////////////////////// */
+
+@media(min-width:768px) {
+    .filter{
+        width: 30%;
+        opacity: .9;
+        /* position: absolute; */
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
 }
