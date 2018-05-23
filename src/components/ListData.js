@@ -1,48 +1,37 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ListItem from './ListItem';
 
-class ListData extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            modal: false
-        };
 
-        this.toggle = this.toggle.bind(this);
-    }
+let ListData = (props) => {
 
-    toggle() {
-        this.setState({
-            modal: !this.state.modal
-        });
-    }
+    console.log("dan's data", props.data);
+
+    const allCrimes = props.data.map((item) =>
+        
+        <div key={item.event_number} className="ListDiv" >
+            <ListItem
+                event_number={item.event_number}
+                itemCategory={item.itemCategory}
+                disposition_description={item.disposition_description}
+                latitudes={item.latitude}
+                description={item.description}
+                 />
+        </div>
+    )
 //      latit = () => {
 //  let Dan={this.props.longitude};
 //  Dan=parseInt{this.props.longitude};
 // };
     // expart default latitude;
 
-    render() {
 
-        return (
-            <div onClick={this.toggle}>
-                <h3>{this.props.objResult}</h3>
-                <p>{this.props.disposition_description}{this.props.event_number}{this.props.latitudes}</p>
-
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-                    <ModalBody>
-
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
-                </Modal>
-            </div>
-        );
-    }
+    return (
+        <div className="ListDiv">
+            {allCrimes}
+        </div>
+    );
 }
+
 
 export default ListData;
