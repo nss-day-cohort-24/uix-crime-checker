@@ -13,9 +13,7 @@ export class MapContainer extends Component {
             activeMarker: {},
             selectedPlace: {},
             call:null,
-            // lat:null,
-            // lng:null,
-            complain:null,
+             complain:null,
             zoom:14,
             imagePreviewUrl:''
         };
@@ -47,6 +45,11 @@ export class MapContainer extends Component {
                      ))
 
                  }
+                    <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
+                        <div>
+                            <h1>{this.state.selectedPlace.name}</h1>
+                        </div>
+                    </InfoWindow>
                 </Map>
             </div>
         );
