@@ -25,3 +25,12 @@
     max-width: 50px;
     margin-bottom: 5px;
 }
+
+.listDiv{
+    overflow: scroll;
+}
+
+.borderRule{
+    border-right: 1px solid white;
+    padding-right: 5rem !important;
+}
