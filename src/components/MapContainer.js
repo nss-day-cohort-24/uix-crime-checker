@@ -21,7 +21,10 @@ export class MapContainer extends Component {
         };
 
     }
-    
+    componentWillUpdate(){
+
+        console.log("Rendered", this.props.objResult);
+    }
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -36,7 +39,7 @@ export class MapContainer extends Component {
         return (
             <div>
                 <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={5} className={"map"}>
-                 <MarkerContainer objResult={this.props.objResult}/>
+                 <MarkerContainer getPolice={this.props.getPolice.bind(this)} objResult={this.props.objResult}/>
                 </Map>
             </div>
         );

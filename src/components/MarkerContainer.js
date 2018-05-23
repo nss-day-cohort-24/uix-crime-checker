@@ -22,10 +22,7 @@ export class MarkerContainer extends Component {
                 showingInfoWindow: true
             });
         }
-        componentWillUpdate(){
-
-            console.log("Rendered", this.props.objResult);
-        }
+        
         renderPoints(){
             //let parseable = this.props.arr;
             // this.props.arr.forEach((element) => {
