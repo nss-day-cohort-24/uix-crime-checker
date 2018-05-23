@@ -50,11 +50,11 @@ class Filter extends Component {
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
                 <form onSubmit={this.submit}>
-                    {/* <hr></hr>
+                     <hr></hr>
                     <CollapseExample title="Type of Complaint" form={<ComplaintInput/>}/>
                     <hr></hr>
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
-                    <hr></hr> */}
+                    <hr></hr> 
                     <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.handleChange}/>}/>
                     <hr></hr>
                     <input type="submit" value="Submit" />

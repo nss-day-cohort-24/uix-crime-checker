@@ -21,11 +21,13 @@ class ComplaintInput extends Component {
         checkboxState: !this.state.checkboxState
       });
     }
+   
     render() {
       const checkedOrNot = [];
       checkedOrNot.push(
         console.log("Fucking checkbox"));
-      const checkbox = (
+      
+        const checkbox = (
         <span>
           <input 
           type="checkbox"
@@ -39,7 +41,7 @@ class ComplaintInput extends Component {
         <div>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" tencode="40" value="Suspicious Person" />{'Suspicious Person'}
                 Suspicious Person
             </Label>
             </FormGroup>
