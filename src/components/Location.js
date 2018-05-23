@@ -13,11 +13,12 @@ class LocationInput extends Component {
 
     onChange = (event) => {
         const userInput = event.target.value;
+        const key = event.target.id;
         this.setState({
-            value: userInput
+            key: userInput
         });
         console.log('value', userInput);
-        this.props.handleChange('locationValue', userInput);
+        this.props.handleChange(key, userInput);
     }
 
     render() {
@@ -25,15 +26,15 @@ class LocationInput extends Component {
             <div>
                 <label>
                     Address
-                    <input type="text" name="Address" value={this.state.value} onChange={this.onChange} />
+                    <input type="text" id="address" name="Address" value={this.state.value} onChange={this.onChange} />
                 </label>
                 <label>
                     Zip Code
-                    <input id="zip" type="text" name="Zip" />
+                    <input id="zip" type="text" name="Zip" value={this.state.value} onChange={this.onChange} />
                 </label>
                 <label>
                     Search Radius
-                    <input type="text" name="Radius" />
+                    <input id="radius" type="text" name="Radius" value={this.state.value} onChange={this.onChange} />
                 </label>
                 
             </div>
