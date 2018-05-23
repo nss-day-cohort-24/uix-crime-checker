@@ -29,6 +29,7 @@ let ListData = (props) => {
     return (
         <div className="ListDiv">
             {allCrimes}
+           
         </div>
     );
 }
