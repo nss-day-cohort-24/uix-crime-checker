@@ -3,7 +3,7 @@
 }
 
 .map{
-    max-height: 80%;
+    max-height: 72%;
     top: 60px;
     /* media query this for desktop display -- 40px */
     width: 100%;
@@ -42,5 +42,11 @@
       }
     .borderRule{
         padding-right: 11rem !important;
+    }
+    .map{
+        max-height: 77%;
+        top: 60px;
+        width: 100%;
+        z-index: 1;
     }
 }

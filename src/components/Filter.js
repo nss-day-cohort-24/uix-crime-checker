@@ -47,11 +47,11 @@ class Filter extends Component {
     return (
          <div ref={ref => this.el = ref}>
                 <button onClick={ () => this.setState({ isPaneOpenLeft: true }) }>
-                    Click me to open left pane with 20% width!
+                <i class="fas fa-filter"></i> FILTER
                 </button>
             <SlidingPane
                 isOpen={ this.state.isPaneOpenLeft }
-                title='Filter'
+                title='Set CrimeChecker Filters:'
                 from='left'
                 width='85%'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
