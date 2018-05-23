@@ -4,9 +4,10 @@
 
 .map{
     max-height: 80%;
-    top: 65px;
+    top: 60px;
     /* media query this for desktop display -- 40px */
     width: 100%;
+    z-index: 1;
 }
 
 .footerNav{
@@ -26,9 +27,6 @@
     margin-bottom: 5px;
 }
 
-.listDiv{
-    overflow: scroll;
-}
 
 .borderRule{
     border-right: 1px solid white;

@@ -68,7 +68,6 @@ class PrimaryContainer extends Component {
     }
 
   
-
     render() {
         const mapView = this.state.mapView;
 
