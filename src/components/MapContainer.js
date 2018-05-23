@@ -7,7 +7,7 @@ export class MapContainer extends Component {
     constructor(props) {
         super(props);
         // this.onMarkerChange = this.onMarkerChange.bind(this);
-         // this.onMarkerClick = this.onMarkerClick.bind(this);
+         this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
@@ -27,17 +27,17 @@ export class MapContainer extends Component {
     //      lng:45.689
     //   });
     // }
-    // onMarkerClick(props, marker, e) {
-    //     this.setState({
-    //       lat:{this.props.latitude},
-    //       lng:{this.props.longitude},
-    //         selectedPlace: props,
-    //         activeMarker: marker,
-    //         complain:"Robbery",
-    //         showingInfoWindow: true
-    //         // imagePreviewUrl:
-    //     });
-    // }
+    onMarkerClick(props, marker, e) {
+        this.setState({
+        //   lat:{this.props.latitude},
+        //   lng:{this.props.longitude},
+            selectedPlace: props,
+            activeMarker: marker,
+            complain:"Robbery",
+            showingInfoWindow: true
+            // imagePreviewUrl:
+        });
+    }
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -59,7 +59,7 @@ export class MapContainer extends Component {
 
 
                     <Marker onClick={this.onMarkerClick} name={'where is calieb'} />
-                    <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/>
+                    {/* <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/> */}
                       <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>

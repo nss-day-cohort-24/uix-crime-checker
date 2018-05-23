@@ -41,10 +41,9 @@ class PrimaryContainer extends Component {
             this.setState({
                 locationValue: object
             })
-           
+          
       }
-    
-    getPolice(){
+   getPolice(){
 
         fetch(`https://data.nashville.gov/resource/28i3-48zr.json?block=0`,{
         method: "GET",
@@ -124,8 +123,7 @@ class PrimaryContainer extends Component {
         
     </div>)
  }
-
-              return(
+     return(
                   <div className="App">
                       {/* {console.log("policeList",policeList)} */}
                       <div className="filter">
@@ -135,7 +133,6 @@ class PrimaryContainer extends Component {
                          </div>
                       <div className="listDiv">
 
-                       {/* <p> {this.state.objResult}</p> */}
                       </div>
                       <ListData/>
                       {/* {policeList} */}
