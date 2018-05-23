@@ -29,13 +29,8 @@ class PrimaryContainer extends Component {
             // .then(() => {this.handleSubmit()});
         }
 
-<<<<<<< HEAD
-        
-    componentDidMount() {
-=======
 
     componentDidMount = () => {
->>>>>>> master
         fetch(`https://data.nashville.gov/resource/28i3-48zr.json`, {
             method: "GET",
             data: {
@@ -91,25 +86,10 @@ class PrimaryContainer extends Component {
                 <div className="filter">
                     <Filter submit={this.getFormData} value={this.locationValue} />
                 </div>
-<<<<<<< HEAD
-                <div className="map">
-                    <MapContainer data={this.state.dataArr}/>
-                </div>
-                <div className="listDiv">
-                    <ListData data={this.state.dataArr}/>
-                </div>
-                <div className="footerNav">
-                    <p>footer</p>
-                </div>
-
-
-
-=======
                 <div mapView={mapView}>{view}</div>
                 <div className="footerNav row">
                         <div className="col-auto mx-auto borderRule" onClick={this.viewMap}><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div><div className="col-auto mr-auto" onClick={this.viewList}><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
                 </div>
->>>>>>> master
             </div>
 
         );

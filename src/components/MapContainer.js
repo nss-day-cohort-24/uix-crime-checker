@@ -7,15 +7,13 @@ import '../App.css';
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
-        // this.onMarkerChange = this.onMarkerChange.bind(this);
-         this.onMarkerClick = this.onMarkerClick.bind(this);
+        
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
             call:null,
-            
-            complain:null,
+             complain:null,
             zoom:14,
             imagePreviewUrl:''
         };
@@ -35,7 +33,7 @@ export class MapContainer extends Component {
           border:'2px solid green',
           color:'black'
         }
-      
+        
         return (
             <div>
                 <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={5} className={"map"}>
@@ -46,13 +44,8 @@ export class MapContainer extends Component {
                         />
                      ))
 
-                <Map style={style} google={this.props.google}zoom={5} className={"map"}>
-
-
-
-                    <Marker onClick={this.onMarkerClick} name={'where is calieb'} />
-                    {/* <Marker  onClick={this.onMarkerChange} name={'caleb in californi'}/> */}
-                      <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
+                 }
+                    <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                         <div>
                             <h1>{this.state.selectedPlace.name}</h1>
                         </div>
