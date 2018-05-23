@@ -27,8 +27,15 @@ class Filter extends Component {
     }
 
     handleChange(key, userInput) {
+
+        //key must be the id of the data, userInput is the data
+
       this.setState({[key]: userInput});
-        }
+      
+        // handleUpdate assigns whatever object to overarching state.
+      this.props.handleUpdate({[key]: userInput});
+
+    }
     
 
     
@@ -55,6 +62,11 @@ class Filter extends Component {
                     <hr></hr>
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
                     <hr></hr> */}
+                    <hr></hr>
+                    <CollapseExample title="Type of Complaint" form={<ComplaintInput handleChange={this.handleChange}/>}/>
+                    <hr></hr>
+                    <CollapseExample title="Date of Crime" form={<DateInput handleChange={this.handleChange}/>}/>
+                    <hr></hr> 
                     <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.handleChange}/>}/>
                     <hr></hr>
                     <input type="submit" value="Submit" />

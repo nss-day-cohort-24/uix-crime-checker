@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 import './Filter.css';
 
+//Checkboxes
+
 class ComplaintInput extends Component {
 
     constructor(props) {
@@ -10,7 +12,10 @@ class ComplaintInput extends Component {
         this.state = {
           checkboxState: true
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
       }
+
+
       /* prevent form submission from reloading the page */
     onSubmit(event) {
         event.preventDefault();
@@ -21,6 +26,20 @@ class ComplaintInput extends Component {
         checkboxState: !this.state.checkboxState
       });
     }
+
+    handleInputChange(event) {
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+  
+      this.setState({
+        [name]: value
+      });
+
+      
+    }
+
+
     render() {
       const checkedOrNot = [];
       checkedOrNot.push(
@@ -39,7 +58,8 @@ class ComplaintInput extends Component {
         <div>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Suspicious" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
                 Suspicious Person
             </Label>
             </FormGroup>

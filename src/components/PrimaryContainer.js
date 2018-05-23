@@ -21,6 +21,12 @@ class PrimaryContainer extends Component {
     handleSubmit = () => {
         alert('A location was submitted: ' + this.state);
     }
+
+    handleUpdate = (object) => {
+        this.setState({
+            [object.key]: [object.userInput]
+        })
+    }
        
     getFormData = (object) => {
         this.setState({
@@ -83,7 +89,7 @@ class PrimaryContainer extends Component {
         return (
             <div className="App">
                 <div className="filter">
-                    <Filter submit={this.getFormData} value={this.locationValue} />
+                    <Filter submit={this.getFormData} value={this.locationValue} handleUpdate={this.handleUpdate}/>
                 </div>
                 <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
