@@ -36,3 +36,22 @@ a {
 a:hover, active{
     text-decoration: underline !important;
 }
+
+/* ///////////////////////////////////// */
+/*********  Start media queries  *********/
+/* ///////////////////////////////////// */
+
+@media(min-width:768px) {
+    .navbar-collapse {
+      background-color: #00244A;
+      }
+    .borderRule{
+        padding-right: 11rem !important;
+    }
+    .header-logo{
+        max-width: 10%;
+        height: auto;
+        margin: 5px 0;
+        display: inline-block;
+    }
+}

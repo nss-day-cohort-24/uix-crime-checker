@@ -45,7 +45,7 @@ export class MapContainer extends Component {
         const style = {
           width: '100%',
           height: '100%',
-          border:'2px solid green',
+        //   border:'2px solid green',
           color:'black'
         }
         // const num=()=>{
