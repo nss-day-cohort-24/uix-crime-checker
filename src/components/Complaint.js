@@ -65,31 +65,36 @@ class ComplaintInput extends Component {
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Intoxication" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange} />{' '}
                 Intoxicated Person
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Investigation" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
                 Want Officer for Investigation
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Disorderly" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
                 Disorderly Person
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Thievery" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
                 Theft
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" />{' '}
+                <Input type="checkbox" name="Knife Attack" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
                 Cutting/Stabbing
             </Label>
             </FormGroup>
