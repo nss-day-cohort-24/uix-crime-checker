@@ -13,12 +13,12 @@ class PrimaryContainer extends Component {
             dataArr: [],
             error: null,
             locationValue: '',
-            mapView: true
+            mapview: true
         }
 
            
     handleSubmit = () => {
-        alert('A location was submitted: ' + this.state.locationValue);
+        alert('A location was submitted: ' + this.state);
     }
        
     getFormData = (object) => {
@@ -58,21 +58,21 @@ class PrimaryContainer extends Component {
 
     viewMap = () => {
         this.setState({
-            mapView: true
+            mapview: true
         });
     }
 
     viewList = () => {
         this.setState({
-            mapView: false
+            mapview: false
         });
     }
 
   
     render() {
-        const mapView = this.state.mapView;
+        const mapview = this.state.mapview;
 
-        let view = mapView ? 
+        let view = mapview ? 
         (<div className="map">
             <MapContainer data={this.state.dataArr} />
         </div>) 
@@ -86,7 +86,7 @@ class PrimaryContainer extends Component {
                 <div className="filter">
                     <Filter submit={this.getFormData} value={this.locationValue} />
                 </div>
-                <div mapView={mapView}>{view}</div>
+                <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
                         <div className="col-auto mx-auto borderRule" onClick={this.viewMap}><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div><div className="col-auto mr-auto" onClick={this.viewList}><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
                 </div>

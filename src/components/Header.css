@@ -1,5 +1,4 @@
 .topNav {
-    position: absolute;
     top: 0;
     width: 100%;
     height: 60px;
@@ -28,7 +27,10 @@
 .nav-link{
     z-index: 9;
     background-color: #004794;
-    /* font-size: 12px; */
+    text-align: center;
+}
+
+a {
     color: white !important;
     /* margin-right:15px;
     border-radius:3px; */
@@ -36,4 +38,23 @@
 
 a.nav-link:hover, active{
     text-decoration: underline !important;
+}
+
+/* ///////////////////////////////////// */
+/*********  Start media queries  *********/
+/* ///////////////////////////////////// */
+
+@media(min-width:768px) {
+    .navbar-collapse {
+      background-color: #00244A;
+      }
+    .borderRule{
+        padding-right: 11rem !important;
+    }
+    .header-logo{
+        max-width: 11%;
+        height: auto;
+        margin: 10px;
+        display: inline-block;
+    }
 }
