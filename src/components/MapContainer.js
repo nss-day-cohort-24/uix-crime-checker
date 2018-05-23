@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import MarkerContainer from './MarkerContainer';
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
+// import MarkerContainer from './MarkerContainer';
 
 import '../App.css';
 
@@ -30,7 +30,7 @@ export class MapContainer extends Component {
         const style = {
           width: '100%',
           height: '100%',
-          border:'2px solid green',
+        //   border:'2px solid green',
           color:'black'
         }
         

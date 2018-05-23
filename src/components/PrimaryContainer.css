@@ -3,7 +3,7 @@
 }
 
 .map{
-    max-height: 80%;
+    max-height: 72%;
     top: 60px;
     /* media query this for desktop display -- 40px */
     width: 100%;
@@ -19,7 +19,6 @@
     color: white;
     padding: 1rem 1rem .5rem 1rem;
     text-transform: uppercase;
-    line-height: 1.4rem;
 }
 
 .footer-icon{
@@ -31,4 +30,23 @@
 .borderRule{
     border-right: 1px solid white;
     padding-right: 5rem !important;
+}
+
+/* ///////////////////////////////////// */
+/*********  Start media queries  *********/
+/* ///////////////////////////////////// */
+
+@media(min-width:768px) {
+    .footerNav {
+      line-height: 1.4rem;
+      }
+    .borderRule{
+        padding-right: 11rem !important;
+    }
+    .map{
+        max-height: 77%;
+        top: 60px;
+        width: 100%;
+        z-index: 1;
+    }
 }
