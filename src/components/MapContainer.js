@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { Map, Marker, GoogleApiWrapper,InfoWindow } from "google-maps-react";
-=======
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
->>>>>>> master
 // import MarkerContainer from './MarkerContainer';
 
 import '../App.css';
@@ -22,13 +18,8 @@ export class MapContainer extends Component {
             zoom:10,
 
         };
-<<<<<<< HEAD
-
-
-=======
         /* binding event to state */
         this.onMarkerClick = this.onMarkerClick.bind(this);
->>>>>>> master
     }
 
     componentWillUpdate(){
@@ -43,7 +34,6 @@ export class MapContainer extends Component {
             showingInfoWindow: true
         });
     }
-<<<<<<< HEAD
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(
             pos => {
@@ -62,11 +52,6 @@ export class MapContainer extends Component {
             showingInfoWindow: true
          });
     }
-=======
-
-
-
->>>>>>> master
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -89,30 +74,16 @@ export class MapContainer extends Component {
                         />
                      ))
                  }
-<<<<<<< HEAD
+
                      <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-=======
-<<<<<<< HEAD
-                    <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
->>>>>>> master
-                        <div>
+    <div>
                             <h1>{this.state.selectedPlace.name}</h1>
                         </div>
                     </InfoWindow>
-<<<<<<< HEAD
                     {/* <Map onChange={this._onChange} center={this.state.center} zoom={this.state.zoom}> */}
                         {/* <div className="place" lat={this.state.center.lat} lng={this.state.center.lng}></div> */}
                     {/* </Map> */}
-=======
-=======
 
-                 <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
--                        <div>
--                            <h1>{this.state.selectedPlace.name}</h1>
--                        </div>
--                    </InfoWindow>
->>>>>>> d776485d64cbf0c2733467f95c5f1db9ac265ceb
->>>>>>> master
                 </Map>
             </div>
         );
