@@ -5,6 +5,7 @@ import Filter from './Filter';
 import ListData from './ListData';
 import MapIcon from '../img/mapIcon.png';
 import ListIcon from '../img/listIcon.png';
+let urlString ='';
 
 // console.log('hi mu mu')
 
@@ -32,7 +33,64 @@ class PrimaryContainer extends Component {
     submit = (event) => {
         // Submit fires the fetch.
         console.log("Fetch the state", this.state);
+        urlString = `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
+        // if(this.state.address){
+        //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
+        // }
+        if(this.state["Suspicious Person"] || this.state["Shots Fired"] || this.state.Fire || this.state.Theft || this.state.Prowler || this.state["Intoxicated Person"] || this.state["Business Check"] || this.state["Traffic Violation"] ){
 
+            urlString+="description="
+        }
+        if(this.state["Suspicious Person"]){
+            urlString+="Suspicious%20Person%20";
+        }
+        if(this.state["Intoxicated Person"]){
+            urlString+="Intoxicated%20Person%20";
+        }
+        if(this.state["Business Check"]){
+            urlString+="Business%20Check%20";
+        }
+        if(this.state["Traffic Violation"]){
+            urlString+="Traffic%20Violation%20";
+        }
+        if(this.state["Shots Fired"]){
+            urlString+="Shots%20Fired%20";
+        }
+        if(this.state.Fire){
+            urlString+="Fire%20";
+        }
+        if(this.state.Prowler){
+            urlString+="Prowler%20";
+        }
+        if(this.state.Theft){
+            urlString+="Theft%20";
+        }
+        if (urlString)
+        {
+            urlString = urlString.slice(0, urlString.length-3);
+            
+        }
+        
+        fetch(`${urlString}`, {
+            method: "GET",
+            data: {
+                "$limit": 100,
+                "$$app_token": "r1zPUd6qffmC6asW1Y8pPPhuj"
+            },
+            header: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        }).then((results) => {
+            console.log("my result", results);
+            return results.json();
+        }).then((data) => {
+            let stuff = Object.values(data);
+            console.log ("dan's stuff", stuff);
+            this.setState({
+                dataArr: stuff
+            })
+
+        });
     }
 
     handleUpdate = (object) => {
@@ -48,10 +106,28 @@ class PrimaryContainer extends Component {
             // console.log('getFormData object', object);
             // .then(() => {this.handleSubmit()});
         }
-
+    // componentWillUpdate(){
+    //     console.log("Update!");
+    //     let stringToSend;
+    //     if (urlString.length === 0){
+    //         stringToSend = "https://data.nashville.gov/resource/28i3-48zr.json";   
+    //     }
+    //     else if(urlString.length >= 1){
+    //         stringToSend = urlString;
+    //         console.log(stringToSend)
+    //     }
+    // }
 
     componentDidMount = () => {
-        fetch(`https://data.nashville.gov/resource/28i3-48zr.json`, {
+        let stringToSend;
+        if (urlString.length === 0){
+            stringToSend = "https://data.nashville.gov/resource/28i3-48zr.json";   
+        }
+        else if(urlString.length >= 1){
+            stringToSend = urlString;
+        }
+
+        fetch(`${stringToSend}`, {
             method: "GET",
             data: {
                 "$limit": 100,
