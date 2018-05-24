@@ -17,7 +17,7 @@ class Filter extends Component {
             isPaneOpenLeft: false,
             locationValue: ''
         };
-        this.handleChange = this.handleChange.bind(this);
+        
         this.submit = this.submit.bind(this);
     }
     
@@ -26,17 +26,10 @@ class Filter extends Component {
         Modal.setAppElement(this.el);
     }
 
-    handleChange(key, userInput) {
-
-        //key must be the id of the data, userInput is the data
-
-      this.setState({[key]: userInput});
-      
-        // handleUpdate assigns whatever object to overarching state.
-      this.props.handleUpdate({[key]: userInput});
-
-    }
     
+    handleSubmit = () => {
+        alert('A location was submitted: ' + this.state);
+    }
 
     
     submit(event){
@@ -63,11 +56,11 @@ class Filter extends Component {
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
                     <hr></hr> */}
                     <hr></hr>
-                    <CollapseExample title="Type of Complaint" form={<ComplaintInput handleChange={this.handleChange}/>}/>
+                    <CollapseExample title="Type of Complaint" form={<ComplaintInput handleChange={this.props.handleChange}/>}/>
                     <hr></hr>
-                    <CollapseExample title="Date of Crime" form={<DateInput handleChange={this.handleChange}/>}/>
+                    <CollapseExample title="Date of Crime" form={<DateInput handleChange={this.props.handleChange}/>}/>
                     <hr></hr> 
-                    <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.handleChange}/>}/>
+                    <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.props.handleChange}/>}/>
                     <hr></hr>
                     <input type="submit" value="Submit" />
                 </form>

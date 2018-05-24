@@ -9,18 +9,28 @@ import ListIcon from '../img/listIcon.png';
 // console.log('hi mu mu')
 
 class PrimaryContainer extends Component {
-    
-        state = {
+    constructor(props) {
+        super(props);
+        this.state = {
             dataArr: [],
             error: null,
             locationValue: '',
             mapview: true
         }
-
-           
-    handleSubmit = () => {
-        alert('A location was submitted: ' + this.state);
+        this.handleChange = this.handleChange.bind(this);
     }
+     
+    handleChange(key, userInput) {
+
+        //key must be the id of the data, userInput is the data
+
+      this.setState({[key]: userInput});
+      
+        // handleUpdate assigns whatever object to overarching state.
+      this.handleUpdate({[key]: userInput});
+
+    }
+    
 
     handleUpdate = (object) => {
         this.setState({
@@ -89,7 +99,7 @@ class PrimaryContainer extends Component {
         return (
             <div className="App">
                 <div className="filter">
-                    <Filter submit={this.getFormData} value={this.locationValue} handleUpdate={this.handleUpdate}/>
+                    <Filter submit={this.getFormData} value={this.locationValue} handleChange={this.handleChange}/>
                 </div>
                 <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
