@@ -54,7 +54,7 @@ class Filter extends Component {
                     <CollapseExample title="Type of Complaint" form={<ComplaintInput/>}/>
                     <hr></hr>
                     <CollapseExample title="Date of Crime" form={<DateInput/>}/>
-                    <hr></hr> 
+                    <hr></hr>
                     <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.handleChange}/>}/>
                     <hr></hr>
                     <input className="submit" type="submit" value="Submit" />
