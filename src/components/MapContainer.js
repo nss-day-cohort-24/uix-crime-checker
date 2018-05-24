@@ -16,7 +16,7 @@ export class MapContainer extends Component {
             // lat:null,
             // lng:null,
             complain:null,
-            zoom:14,
+            zoom:25,
             imagePreviewUrl:''
         };
         /* binding event to state */
@@ -51,7 +51,7 @@ export class MapContainer extends Component {
         
         return (
             <div>
-                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google} zoom={8} className={"map"} initialCenter={{lat: 36.149937, lng: -86.812866}} >
+                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google} zoom={13} className={"map"} initialCenter={{lat: 36.149937, lng: -86.812866}} >
                  {
                    this.props.data.map((item, index) => (
                    

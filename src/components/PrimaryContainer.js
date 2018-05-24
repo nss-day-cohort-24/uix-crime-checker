@@ -81,17 +81,13 @@ class PrimaryContainer extends Component {
         (<div className="listDiv">
             <ListData data={this.state.dataArr}/>
         </div>);
+
         return (
             <div className="App">
                 <div className="filter">
                 <Filter submit={this.getFormData} value={this.locationValue} data={this.state.dataArr} />
                 </div>
-                <div className="map">
-                    <MapContainer data={this.state.dataArr} />
-                </div>
-                <div className="listDiv">
-                    <ListData data={this.state.dataArr}/>
-                </div>
+                
                 <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
                         <div className="col-auto mx-auto borderRule" onClick={this.viewMap}><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div><div className="col-auto mr-auto" onClick={this.viewList}><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
