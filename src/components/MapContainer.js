@@ -57,20 +57,12 @@ export class MapContainer extends Component {
                         />
                      ))
                  }
-<<<<<<< HEAD
-                    <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-                        <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow>
-=======
 
                  <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
 -                        <div>
 -                            <h1>{this.state.selectedPlace.name}</h1>
 -                        </div>
 -                    </InfoWindow>
->>>>>>> d776485d64cbf0c2733467f95c5f1db9ac265ceb
                 </Map>
             </div>
         );
