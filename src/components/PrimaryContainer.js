@@ -32,14 +32,16 @@ class PrimaryContainer extends Component {
     }
     submit = (event) => {
         // Submit fires the fetch.
+        urlString = '';
         console.log("Fetch the state", this.state);
         urlString = `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
-        // if(this.state.address){
-        //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
-        // }
+        if(this.state.address){
+            urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
+            urlString+="%20";
+        }
         if(this.state["Suspicious Person"] || this.state["Shots Fired"] || this.state.Fire || this.state.Theft || this.state.Prowler || this.state["Intoxicated Person"] || this.state["Business Check"] || this.state["Traffic Violation"] ){
 
-            urlString+="description="
+            urlString+="&description="
         }
         if(this.state["Suspicious Person"]){
             urlString+="Suspicious%20Person%20";
@@ -85,7 +87,6 @@ class PrimaryContainer extends Component {
             return results.json();
         }).then((data) => {
             let stuff = Object.values(data);
-            console.log ("dan's stuff", stuff);
             this.setState({
                 dataArr: stuff
             })
