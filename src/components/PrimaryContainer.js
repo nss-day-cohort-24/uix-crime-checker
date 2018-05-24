@@ -34,15 +34,18 @@ class PrimaryContainer extends Component {
         // Submit fires the fetch.
         console.log("Fetch the state", this.state);
         urlString += `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
-        // if(this.state.address){
-        //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
-        // }
+        if(this.state.address){
+            urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
+        }
+        if(!this.state.address){
+            urlString+=`block=0`;
+        }
         if(this.state.Suspicious || this.state.Disorderly || this.state.Investigation || this.state.Thievery  || this.state["Knife Attack"] ){
 
-            urlString+="description="
+            urlString+="&description="
         }
         if(this.state.Suspicious){
-            urlString+="Suspicious%20";
+            urlString+="Suspicious%20Person%20";
         }
         if(this.state.Disorderly){
             urlString+="Disorderly%20";
