@@ -6,11 +6,9 @@ import ListData from './ListData';
 import MapIcon from '../img/mapIcon.png';
 import ListIcon from '../img/listIcon.png';
 
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 // console.log('hi mu mu')
 
 class PrimaryContainer extends Component {
-    // console.log('hi mu mu');
     constructor(props) {
         super(props);
         this.state = {
@@ -19,13 +17,28 @@ class PrimaryContainer extends Component {
             locationValue: '',
             mapview: true
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.getFormData = this.getFormData.bind(this);
-       }
-       
-           
-       handleSubmit = () => {
-        alert('A location was submitted: ' + this.state.locationValue);
+        this.handleChange = this.handleChange.bind(this);
+        this.submit = this.submit.bind(this);
+    }
+     
+    handleChange(key, userInput) {
+
+        //key must be the id of the data, userInput is the data
+
+      this.setState({[key]: userInput}); 
+        // handleUpdate assigns whatever object to overarching state.
+      this.handleUpdate({[key]: userInput});
+    }
+    submit = (event) => {
+        // Submit fires the fetch.
+        console.log("Fetch the state", this.state);
+
+    }
+
+    handleUpdate = (object) => {
+        this.setState({
+            [object.key]: [object.userInput]
+        })
     }
        
     getFormData = (object) => {
@@ -36,8 +49,8 @@ class PrimaryContainer extends Component {
             // .then(() => {this.handleSubmit()});
         }
 
-        
-        componentDidMount = () => {
+
+    componentDidMount = () => {
         fetch(`https://data.nashville.gov/resource/28i3-48zr.json`, {
             method: "GET",
             data: {
@@ -59,6 +72,8 @@ class PrimaryContainer extends Component {
 
         });
     }
+
+
     viewMap = () => {
         this.setState({
             mapview: true
@@ -70,6 +85,8 @@ class PrimaryContainer extends Component {
             mapview: false
         });
     }
+
+  
     render() {
         const mapview = this.state.mapview;
 
@@ -85,15 +102,12 @@ class PrimaryContainer extends Component {
         return (
             <div className="App">
                 <div className="filter">
-                <Filter submit={this.getFormData} value={this.locationValue} data={this.state.dataArr} />
+                    <Filter submit={this.getFormData} submit2={this.submit} value={this.locationValue} handleChange={this.handleChange}/>
                 </div>
-                
                 <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
                         <div className="col-auto mx-auto borderRule" onClick={this.viewMap}><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div><div className="col-auto mr-auto" onClick={this.viewList}><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
                 </div>
-
-
             </div>
         );
     }
