@@ -25,13 +25,9 @@ class PrimaryContainer extends Component {
 
         //key must be the id of the data, userInput is the data
 
-      this.setState({[key]: userInput});
-      
+      this.setState({[key]: userInput}); 
         // handleUpdate assigns whatever object to overarching state.
       this.handleUpdate({[key]: userInput});
-
-      
-
     }
     submit = (event) => {
         // Submit fires the fetch.
