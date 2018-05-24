@@ -51,7 +51,7 @@ export class MapContainer extends Component {
         
         return (
             <div>
-                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google} zoom={5} className={"map"} initialCenter={{lat: 36.149937, lng: -86.812866}} >
+                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google} zoom={8} className={"map"} initialCenter={{lat: 36.149937, lng: -86.812866}} >
                  {
                    this.props.data.map((item, index) => (
                    
@@ -67,12 +67,12 @@ export class MapContainer extends Component {
 
                  <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
                     <div className="MapMarkerInfo">
--                       <h6>{this.state.selectedPlace.name}</h6>
+                   <h6>{this.state.selectedPlace.name}</h6>
                         <p><strong>Street:</strong> {this.state.selectedPlace.street_name} <br/>
                         <strong>Date of Crime:</strong> {this.state.selectedPlace.call_received}<br/>
                         <strong>Complaint Number:</strong> {this.state.selectedPlace.complaint} </p>
                     </div> 
--                    </InfoWindow>
+               </InfoWindow>
                 </Map>
             </div>
         );
