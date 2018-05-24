@@ -18,23 +18,27 @@ class ComplaintInput extends Component {
 
       /* prevent form submission from reloading the page */
     onSubmit(event) {
-        event.preventDefault();
-      }
-      /* callback to change the checkboxState to false when the checkbox is checked */
+
+      const userInput = event.target.value;
+      const key = event.target.id;
+      event.preventDefault();
+    }
+    /* callback to change the checkboxState to false when the checkbox is checked */
     toggle(event) {
       this.setState({
         checkboxState: !this.state.checkboxState
       });
     }
-
+    
     handleInputChange(event) {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
       const name = target.name;
-  
+      
       this.setState({
         [name]: value
       });
+      this.props.handleChange(name, value);
 
       
     }
