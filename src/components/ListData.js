@@ -6,9 +6,9 @@ import './ListItem.css';
 let ListData = (props) => {
 
     console.log("dan's data", props.data);
- 
+
     const allCrimes = props.data.map((item) =>
-        
+
         <div key={item.event_number} className="ListDiv">
             <ListItem
                event_number={item.event_number}
@@ -17,7 +17,12 @@ let ListData = (props) => {
                 call_received={item.call_received}
                 description={item.description}
                 block={item.block}
+                complaint={item.complaint}
                 street_name={item.street_name}
+                disposition_code={item.disposition_code}
+                rpa={item.rpa}
+                unit_dispatched={item.unit_dispatched}
+                tencode={item.tencode}
                  />
         </div>
     )
@@ -37,7 +42,7 @@ let ListData = (props) => {
                      </tr>
                 </thead>
                </table> */}
-                      
+
         </div>
     );
 }

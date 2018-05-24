@@ -6,23 +6,35 @@ import '../App.css';
 
 export class MapContainer extends Component {
     constructor(props) {
-        super(props);
         
+        super(props);
+      
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
-            call:null,
+            center: [36.1627, 86.7816],
              complain:null,
-            zoom:14,
+            zoom:10,
             imagePreviewUrl:''
         };
-
+     
     }
     componentWillUpdate(){
 
         console.log("Rendered", this.props.objResult);
     }
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition(
+            pos => {
+                this.setState({
+                    center: {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                });
+            }
+        )}
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -36,7 +48,8 @@ export class MapContainer extends Component {
         
         return (
             <div>
-                <Map style={{minWidth: "100px",minHeight: "100px"}} google={this.props.google}zoom={5} className={"map"}>
+                
+                <Map style={{ minWidth: "100px", minHeight: "100px" }} google={this.props.google} zoom={5} className={"map"} onChange={this._onChange} center={this.state.center} zoom={this.state.zoom}>
                  {
                    this.props.data.map((item, index) => (
                        
@@ -50,6 +63,9 @@ export class MapContainer extends Component {
                             <h1>{this.state.selectedPlace.name}</h1>
                         </div>
                     </InfoWindow> */}
+                    {/* <Map onChange={this._onChange} center={this.state.center} zoom={this.state.zoom}> */}
+                        {/* <div className="place" lat={this.state.center.lat} lng={this.state.center.lng}></div> */}
+                    {/* </Map> */}
                 </Map>
             </div>
         );
