@@ -29,7 +29,7 @@ let ListData = (props) => {
     return (
         <div className="container-fluid">
             <h1 className="h_text-center">Metro Nashville Davidson County Calls For Police Service</h1>
-            <div class="ListDiv">{allCrimes}</div>
+            <div className="ListDiv">{allCrimes}</div>
             {/* <table class="table table-striped"> */}
                 {/* <thead>
                     <tr>
