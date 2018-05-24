@@ -75,15 +75,11 @@ export class MapContainer extends Component {
                      ))
                  }
 
-                     <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-    <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow>
-                    {/* <Map onChange={this._onChange} center={this.state.center} zoom={this.state.zoom}> */}
-                        {/* <div className="place" lat={this.state.center.lat} lng={this.state.center.lng}></div> */}
-                    {/* </Map> */}
-
+                 <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
+-                        <div>
+-                            <h1>{this.state.selectedPlace.name}</h1>
+-                        </div>
+-                    </InfoWindow>
                 </Map>
             </div>
         );
