@@ -32,7 +32,7 @@ class PrimaryContainer extends Component {
     }
     submit = (event) => {
         // Submit fires the fetch.
-        urlString = '';
+        urlString = ' ';
         console.log("Fetch the state", this.state);
         urlString = `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
         if(this.state.address){
@@ -92,6 +92,16 @@ class PrimaryContainer extends Component {
             })
 
         });
+
+        this.state["Suspicious Person"] = false;
+        this.state["Intoxicated Person"] = false;
+        this.state["Shots Fired"] = false;
+        this.state.Fire = false;
+        this.state.Theft = false;
+        this.state.Prowler = false;
+        this.state["Intoxicated Person"] = false;
+        this.state["Business Check"] = false;
+        this.state["Traffic Violation"] = false;
     }
 
     handleUpdate = (object) => {
