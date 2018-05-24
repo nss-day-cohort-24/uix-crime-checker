@@ -36,9 +36,9 @@ npm start
 
 ## Authors
 
-Dan Watson
-Ryan Brisentine
-Melissa Wheatley
-Phonethip Liu
-Million Asseghegn
+Dan Watson,
+Ryan Brisentine,
+Melissa Wheatley,
+Phonethip Liu,
+Million Asseghegn,
 Kelsey Pintens
