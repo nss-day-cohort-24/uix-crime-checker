@@ -37,24 +37,33 @@ class PrimaryContainer extends Component {
         // if(this.state.address){
         //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
         // }
-        if(this.state.Suspicious || this.state.Disorderly || this.state.Investigation || this.state.Thievery  || this.state["Knife Attack"] ){
+        if(this.state["Suspicious Person"] || this.state["Shots Fired"] || this.state.Fire || this.state.Theft || this.state.Prowler || this.state["Intoxicated Person"] || this.state["Business Check"] || this.state["Traffic Violation"] ){
 
             urlString+="description="
         }
-        if(this.state.Suspicious){
-            urlString+="Suspicious%20";
+        if(this.state["Suspicious Person"]){
+            urlString+="Suspicious%20Person%20";
         }
-        if(this.state.Disorderly){
-            urlString+="Disorderly%20";
+        if(this.state["Intoxicated Person"]){
+            urlString+="Intoxicated%20Person%20";
         }
-        if(this.state.Investigation){
-            urlString+="Investigation%20";
+        if(this.state["Business Check"]){
+            urlString+="Business%20Check%20";
         }
-        if(this.state.Thievery){
-            urlString+="Thief%20";
+        if(this.state["Traffic Violation"]){
+            urlString+="Traffic%20Violation%20";
         }
-        if(this.state["Knife Attack"]){
-            urlString+="Knife%20";
+        if(this.state["Shots Fired"]){
+            urlString+="Shots%20Fired%20";
+        }
+        if(this.state.Fire){
+            urlString+="Fire%20";
+        }
+        if(this.state.Prowler){
+            urlString+="Prowler%20";
+        }
+        if(this.state.Theft){
+            urlString+="Theft%20";
         }
         if (urlString)
         {

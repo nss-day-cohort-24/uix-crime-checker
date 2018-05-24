@@ -63,44 +63,58 @@ class ComplaintInput extends Component {
         <div>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" name="Suspicious" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+                <Input type="checkbox" name="Business Check" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
             onChange={this.handleInputChange}/>{' '}
-                Suspicious Person
+                Business Check
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" name="Intoxication" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+                <Input type="checkbox" name="Fire" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
+                Fire
+            </Label>
+            </FormGroup>
+            <FormGroup check>
+            <Label check>
+                <Input type="checkbox" name="Intoxicated Person" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
             onChange={this.handleInputChange} />{' '}
                 Intoxicated Person
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" name="Investigation" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+                <Input type="checkbox" name="Prowler" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
             onChange={this.handleInputChange}/>{' '}
-                Want Officer for Investigation
+                Prowler
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" name="Disorderly" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+                <Input type="checkbox" name="Traffic Violation" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
             onChange={this.handleInputChange}/>{' '}
-                Disorderly Person
+                Traffic Violation
             </Label>
             </FormGroup>
             <FormGroup check>
             <Label check>
-                <Input type="checkbox" name="Thievery" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+                <Input type="checkbox" name="Shots Fired" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
+                Shots Fired
+            </Label>
+            </FormGroup>
+            <FormGroup check>
+            <Label check>
+                <Input type="checkbox" name="Suspicious Person" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
+            onChange={this.handleInputChange}/>{' '}
+                Suspicious Person
+            </Label>
+            </FormGroup>
+            <FormGroup check>
+            <Label check>
+                <Input type="checkbox" name="Theft" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
             onChange={this.handleInputChange}/>{' '}
                 Theft
-            </Label>
-            </FormGroup>
-            <FormGroup check>
-            <Label check>
-                <Input type="checkbox" name="Knife Attack" toggle={this.toggle.bind(this)} onChange={this.handleInputChange}
-            onChange={this.handleInputChange}/>{' '}
-                Cutting/Stabbing
             </Label>
             </FormGroup>
         </div>
