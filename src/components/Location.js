@@ -25,16 +25,12 @@ class LocationInput extends Component {
         return (
             <div>
                 <label>
-                    Address
+                    Address <br/>
                     <input type="text" id="address" name="Address" value={this.state.value} onChange={this.onChange} />
                 </label>
                 <label>
-                    Zip Code
+                    Zip Code <br/>
                     <input id="zip" type="text" name="Zip" value={this.state.value} onChange={this.onChange} />
-                </label>
-                <label>
-                    Search Radius
-                    <input id="radius" type="text" name="Radius" value={this.state.value} onChange={this.onChange} />
                 </label>
                 
             </div>

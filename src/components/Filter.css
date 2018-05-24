@@ -8,7 +8,7 @@
 }
 
 .filterBtn {
-    color: navy;
+    color: #004794;
 }
 
 .rdr-Day.is-selected.is-inRange {
@@ -43,6 +43,40 @@
     /* margin-top:  */
 }
 
+.add {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: #004794;
+}
+
+.submit {
+    background-color: #004794;
+    color: #ffffff;
+    border: none;
+    border-radius: .25em;
+}
+
+.slide-pane .slide-pane__title {
+    color: #004794;
+}
+
+.slide-pane__header {
+    margin-top: 1.25em;
+}
+
+.slide-pane__content {
+    padding-top: 0px;
+}
+
+input {
+    border-color: #efefef;
+}
+
 /* ///////////////////////////////////// */
 /*********  Start media queries  *********/
 /* ///////////////////////////////////// */
@@ -57,3 +91,4 @@
         right: 0;
     }
 }
+
