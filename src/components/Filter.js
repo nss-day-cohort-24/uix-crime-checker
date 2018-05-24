@@ -58,7 +58,7 @@ class Filter extends Component {
                     <hr></hr> 
                     <CollapseExample value={this.props.value} title="Location" form={<LocationInput handleChange={this.props.handleChange}/>}/>
                     <hr></hr>
-                    <input className="submit" type="submit" value="Submit" />
+                    <input className="submit" type="submit" value="Submit" onClick={(event)=>{ console.log("Submit pressed."), this.props.submit2(event), event.preventDefault()}}/>
                 </form>
             </SlidingPane>
         </div>

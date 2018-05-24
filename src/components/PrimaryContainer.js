@@ -18,6 +18,7 @@ class PrimaryContainer extends Component {
             mapview: true
         }
         this.handleChange = this.handleChange.bind(this);
+        this.submit = this.submit.bind(this);
     }
      
     handleChange(key, userInput) {
@@ -29,8 +30,14 @@ class PrimaryContainer extends Component {
         // handleUpdate assigns whatever object to overarching state.
       this.handleUpdate({[key]: userInput});
 
+      
+
     }
-    
+    submit = (event) => {
+        // Submit fires the fetch.
+        console.log("Fetch the state", this.state);
+
+    }
 
     handleUpdate = (object) => {
         this.setState({
@@ -99,7 +106,7 @@ class PrimaryContainer extends Component {
         return (
             <div className="App">
                 <div className="filter">
-                    <Filter submit={this.getFormData} value={this.locationValue} handleChange={this.handleChange}/>
+                    <Filter submit={this.getFormData} submit2={this.submit} value={this.locationValue} handleChange={this.handleChange}/>
                 </div>
                 <div mapview={mapview}>{view}</div>
                 <div className="footerNav row">
