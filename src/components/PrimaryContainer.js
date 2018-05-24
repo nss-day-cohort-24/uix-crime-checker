@@ -5,6 +5,7 @@ import Filter from './Filter';
 import ListData from './ListData';
 import MapIcon from '../img/mapIcon.png';
 import ListIcon from '../img/listIcon.png';
+let urlString ='';
 
 // console.log('hi mu mu')
 
@@ -32,7 +33,55 @@ class PrimaryContainer extends Component {
     submit = (event) => {
         // Submit fires the fetch.
         console.log("Fetch the state", this.state);
+        urlString += `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
+        // if(this.state.address){
+        //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
+        // }
+        if(this.state.Suspicious || this.state.Disorderly || this.state.Investigation || this.state.Thievery  || this.state["Knife Attack"] ){
 
+            urlString+="description="
+        }
+        if(this.state.Suspicious){
+            urlString+="Suspicious%20";
+        }
+        if(this.state.Disorderly){
+            urlString+="Disorderly%20";
+        }
+        if(this.state.Investigation){
+            urlString+="Investigation%20";
+        }
+        if(this.state.Thievery){
+            urlString+="Thief%20";
+        }
+        if(this.state["Knife Attack"]){
+            urlString+="Knife%20";
+        }
+        if (urlString)
+        {
+            urlString = urlString.slice(0, urlString.length-3);
+            
+        }
+        
+        fetch(`${urlString}`, {
+            method: "GET",
+            data: {
+                "$limit": 100,
+                "$$app_token": "r1zPUd6qffmC6asW1Y8pPPhuj"
+            },
+            header: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        }).then((results) => {
+            console.log("my result", results);
+            return results.json();
+        }).then((data) => {
+            let stuff = Object.values(data);
+            console.log ("dan's stuff", stuff);
+            this.setState({
+                dataArr: stuff
+            })
+
+        });
     }
 
     handleUpdate = (object) => {
@@ -48,10 +97,28 @@ class PrimaryContainer extends Component {
             // console.log('getFormData object', object);
             // .then(() => {this.handleSubmit()});
         }
-
+    // componentWillUpdate(){
+    //     console.log("Update!");
+    //     let stringToSend;
+    //     if (urlString.length === 0){
+    //         stringToSend = "https://data.nashville.gov/resource/28i3-48zr.json";   
+    //     }
+    //     else if(urlString.length >= 1){
+    //         stringToSend = urlString;
+    //         console.log(stringToSend)
+    //     }
+    // }
 
     componentDidMount = () => {
-        fetch(`https://data.nashville.gov/resource/28i3-48zr.json`, {
+        let stringToSend;
+        if (urlString.length === 0){
+            stringToSend = "https://data.nashville.gov/resource/28i3-48zr.json";   
+        }
+        else if(urlString.length >= 1){
+            stringToSend = urlString;
+        }
+
+        fetch(`${stringToSend}`, {
             method: "GET",
             data: {
                 "$limit": 100,
