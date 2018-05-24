@@ -6,11 +6,8 @@ import ListData from './ListData';
 import MapIcon from '../img/mapIcon.png';
 import ListIcon from '../img/listIcon.png';
 
-<<<<<<< HEAD
-=======
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 // console.log('hi mu mu')
->>>>>>> master
 
 class PrimaryContainer extends Component {
     // console.log('hi mu mu');
