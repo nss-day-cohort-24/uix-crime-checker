@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 // import MarkerContainer from './MarkerContainer';
 
 import '../App.css';
@@ -19,12 +19,25 @@ export class MapContainer extends Component {
             zoom:14,
             imagePreviewUrl:''
         };
-
+        /* binding event to state */
+        this.onMarkerClick = this.onMarkerClick.bind(this);
     }
+
     componentWillUpdate(){
-
-        console.log("Rendered", this.props.objResult);
+        console.log("Rendered", this.props.data);
     }
+
+    /* marker event handler */
+    onMarkerClick(props, marker, e) {
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        });
+    }
+
+
+
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>
@@ -32,7 +45,7 @@ export class MapContainer extends Component {
         const style = {
           width: '100%',
           height: '100%',
-        //   border:'2px solid green',
+          border:'2px solid green',
           color:'black'
         }
         
@@ -45,8 +58,13 @@ export class MapContainer extends Component {
                         <Marker title={'This is a point'} onClick={this.onMarkerClick} name={item.description} position={{ lat: parseFloat(item.latitude), lng: parseFloat(item.longitude) }} 
                         />
                      ))
-
                  }
+
+                 <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
+-                        <div>
+-                            <h1>{this.state.selectedPlace.name}</h1>
+-                        </div>
+-                    </InfoWindow>
                 </Map>
             </div>
         );

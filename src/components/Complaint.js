@@ -48,7 +48,8 @@ class ComplaintInput extends Component {
       const checkedOrNot = [];
       checkedOrNot.push(
         console.log("Fucking checkbox"));
-      const checkbox = (
+      
+        const checkbox = (
         <span>
           <input 
           type="checkbox"
