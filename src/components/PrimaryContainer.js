@@ -33,7 +33,7 @@ class PrimaryContainer extends Component {
     submit = (event) => {
         // Submit fires the fetch.
         console.log("Fetch the state", this.state);
-        urlString += `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
+        urlString = `https://data.nashville.gov/resource/28i3-48zr.json?` //description=Business%20Check
         // if(this.state.address){
         //     urlString+=`street_name=` + encodeURIComponent(this.state.address.trim())
         // }
