@@ -6,18 +6,22 @@ import '../App.css';
 
 export class MapContainer extends Component {
     constructor(props) {
+
         super(props);
-        
+        this.onMarkerClick = this.onMarkerClick.bind(this);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
+
+            center: [36.1627, 86.7816],
+
+            zoom:10,
+
             call:null,
-            // lat:null,
-            // lng:null,
-            complain:null,
-            zoom:25,
+
             imagePreviewUrl:''
+
         };
         /* binding event to state */
         this.onMarkerClick = this.onMarkerClick.bind(this);
@@ -35,9 +39,24 @@ export class MapContainer extends Component {
             showingInfoWindow: true 
         });
     }
-
-
-
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition(
+            pos => {
+                this.setState({
+                    center: {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                });
+            }
+        )}
+    onMarkerClick(props, marker, e) {
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+         });
+    }
     render() {
         if (!this.props.google) {
             return <div>Loading...</div>

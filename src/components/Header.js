@@ -34,7 +34,7 @@ class Header extends Component {
         return(
             <div>
             <Navbar expand="md" className="topNav">
-              <img src={Logo} className="header-logo" alt="Crime Checker logo"></img>
+              <img src={Logo} className="header-logo" alt="Crime Checker logo"style={{Width:"50px"}}></img>
               <button type="button" className="navbar-toggler" onClick={this.toggleNavbar} ><i className="fas fa-bars"></i></button>
 
 

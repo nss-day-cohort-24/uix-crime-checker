@@ -18,8 +18,7 @@ class App extends Component {
           {/* <Filter/> */}
           <Header/>
           <PrimaryContainer/>
-        
-        </div>
+      </div>
       );
     }
 

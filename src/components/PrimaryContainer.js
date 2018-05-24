@@ -71,6 +71,8 @@ class PrimaryContainer extends Component {
             })
 
         });
+
+
     }
 
 
@@ -109,9 +111,35 @@ class PrimaryContainer extends Component {
                         <div className="col-auto mx-auto borderRule" onClick={this.viewMap}><img src={MapIcon} className="footer-icon" alt="Map Icon"></img><br />Map</div><div className="col-auto mr-auto" onClick={this.viewList}><img src={ListIcon} className="footer-icon" alt="List Icon"></img><br/>List</div>
                 </div>
             </div>
+
         );
     }
 }
 
 
 export default PrimaryContainer;
+
+
+
+
+                // resolved.map((item, index) => {
+                    // objResults.push({
+                    //     block: item.block,
+                    //     call_received: item.call_received,
+                    //     complaint: item.complaint,
+                    //     description: item.description,
+                    //     disposition_code: item.disposition_code,
+                    //     disposition_description: item.disposition_description,
+                    //     event_number: item.event_number,
+                    //     latitude: item.latitude,
+                    //     longitude: item.longitude,
+                    //     mapped_location: item.mapped_location,
+                    //     rpa: item.rpa,
+                    //     sector: item.sector,
+                    //     shift: item.shift,
+                    //     street_name: item.street_name,
+                    //     tencode: item.tencode,
+                    //     tencode_suffix: item.tencode_suffix,
+                    //     tencode_suffix_description: item.tencode_suffix_description,
+                    //     unit_dispatched: item.unit_dispatched,
+                    //     zone: item.zone,
