@@ -11,8 +11,9 @@
     margin-right: 0 !important;
 }
 
-.header-logo{
-    max-width: 10%;
+img.header-logo{
+    min-width: 85px;
+    max-width: 86px;
     height: auto;
     margin: 5px 0;
     display: inline-block;
